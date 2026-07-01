@@ -1,0 +1,1530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>India INS Food Additives – Complete Safety Reference</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0c0f;
+    --surface: #111318;
+    --border: #1e2229;
+    --accent-safe: #00c896;
+    --accent-unsafe: #ff3b4e;
+    --accent-caution: #f0a500;
+    --text-primary: #e8eaf0;
+    --text-secondary: #8a909e;
+    --text-muted: #4a5060;
+    --gold: #c9a84c;
+    --highlight: #1a1e27;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--text-primary);
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 13.5px;
+    line-height: 1.65;
+    min-height: 100vh;
+  }
+  /* Header */
+  .hero {
+    background: linear-gradient(135deg, #0d1018 0%, #111620 50%, #0a0c0f 100%);
+    border-bottom: 1px solid var(--border);
+    padding: 52px 40px 44px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 360px; height: 360px;
+    background: radial-gradient(circle, rgba(0,200,150,0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -40px; left: 30%;
+    width: 280px; height: 280px;
+    background: radial-gradient(circle, rgba(255,59,78,0.05) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 4vw, 48px);
+    font-weight: 900;
+    color: #fff;
+    line-height: 1.15;
+    margin-bottom: 16px;
+    max-width: 700px;
+  }
+  .hero h1 span { color: var(--gold); }
+  .hero-sub {
+    font-size: 13px;
+    color: var(--text-secondary);
+    max-width: 680px;
+    line-height: 1.7;
+    margin-bottom: 28px;
+  }
+  /* Legend */
+  .legend {
+    display: flex; gap: 20px; flex-wrap: wrap;
+    margin-bottom: 10px;
+  }
+  .legend-item {
+    display: flex; align-items: center; gap: 8px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10.5px;
+    letter-spacing: 0.05em;
+  }
+  .dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .dot-safe { background: var(--accent-safe); }
+  .dot-unsafe { background: var(--accent-unsafe); }
+  .dot-caution { background: var(--accent-caution); }
+  /* Controls */
+  .controls {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 40px;
+    display: flex; gap: 12px; flex-wrap: wrap; align-items: center;
+    position: sticky; top: 0; z-index: 100;
+  }
+  .search-box {
+    flex: 1; min-width: 220px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 8px 14px;
+    color: var(--text-primary);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .search-box:focus { border-color: var(--gold); }
+  .search-box::placeholder { color: var(--text-muted); }
+  .filter-btn {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 8px 14px;
+    color: var(--text-secondary);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    cursor: pointer;
+    transition: all 0.2s;
+    letter-spacing: 0.04em;
+  }
+  .filter-btn:hover { border-color: var(--text-secondary); color: var(--text-primary); }
+  .filter-btn.active-safe { border-color: var(--accent-safe); color: var(--accent-safe); background: rgba(0,200,150,0.07); }
+  .filter-btn.active-unsafe { border-color: var(--accent-unsafe); color: var(--accent-unsafe); background: rgba(255,59,78,0.07); }
+  .filter-btn.active-caution { border-color: var(--accent-caution); color: var(--accent-caution); background: rgba(240,165,0,0.07); }
+  .filter-btn.active-all { border-color: var(--gold); color: var(--gold); background: rgba(201,168,76,0.07); }
+  .count-badge {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    color: var(--text-muted);
+    margin-left: auto;
+    letter-spacing: 0.08em;
+  }
+  /* Category headers */
+  .category-header {
+    padding: 20px 40px 10px;
+    border-bottom: 1px solid var(--border);
+    margin-top: 8px;
+  }
+  .category-title {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  /* Table */
+  .table-wrap { padding: 0 0 60px; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  thead th {
+    background: var(--surface);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9.5px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    padding: 12px 16px 12px 20px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 57px;
+    z-index: 50;
+  }
+  thead th:first-child { padding-left: 40px; width: 100px; }
+  thead th:last-child { padding-right: 40px; }
+  tbody tr {
+    border-bottom: 1px solid rgba(30,34,41,0.7);
+    transition: background 0.15s;
+  }
+  tbody tr:hover { background: rgba(255,255,255,0.022); }
+  tbody tr.hidden { display: none; }
+  td {
+    padding: 13px 16px;
+    vertical-align: top;
+  }
+  td:first-child { padding-left: 40px; }
+  td:last-child { padding-right: 40px; }
+  /* INS code cell */
+  .ins-code {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    font-weight: 500;
+    color: #fff;
+    white-space: nowrap;
+  }
+  /* Name cell */
+  .additive-name {
+    font-weight: 500;
+    color: var(--text-primary);
+    font-size: 13px;
+  }
+  .additive-compound {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10.5px;
+    color: var(--text-muted);
+    margin-top: 2px;
+  }
+  .additive-use {
+    font-size: 11px;
+    color: var(--text-secondary);
+    margin-top: 3px;
+  }
+  /* Status badge */
+  .status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9.5px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 4px;
+    white-space: nowrap;
+  }
+  .status-safe { background: rgba(0,200,150,0.1); color: var(--accent-safe); border: 1px solid rgba(0,200,150,0.25); }
+  .status-unsafe { background: rgba(255,59,78,0.1); color: var(--accent-unsafe); border: 1px solid rgba(255,59,78,0.25); }
+  .status-caution { background: rgba(240,165,0,0.1); color: var(--accent-caution); border: 1px solid rgba(240,165,0,0.25); }
+  /* Side effects */
+  .side-effects {
+    font-size: 12px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+  .side-effects strong {
+    color: var(--accent-unsafe);
+    font-weight: 500;
+  }
+  .side-effects .safe-note {
+    color: var(--accent-safe);
+    font-weight: 500;
+  }
+  /* Research refs */
+  .refs {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9.5px;
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin-top: 5px;
+  }
+  .refs span {
+    display: block;
+  }
+  /* Category separator row */
+  .cat-row td {
+    padding: 18px 40px 6px;
+    background: var(--bg);
+  }
+  .cat-row-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9.5px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    border-bottom: 1px solid rgba(201,168,76,0.2);
+    padding-bottom: 6px;
+  }
+  /* Footer */
+  .footer {
+    padding: 40px;
+    border-top: 1px solid var(--border);
+    background: var(--surface);
+  }
+  .footer-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    color: var(--gold);
+    margin-bottom: 12px;
+  }
+  .footer p {
+    font-size: 12px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    max-width: 800px;
+    margin-bottom: 8px;
+  }
+  .footer p strong { color: var(--text-primary); }
+  @media (max-width: 768px) {
+    .hero, .controls, .cat-row td, td:first-child, thead th:first-child { padding-left: 18px; }
+    td:last-child, thead th:last-child { padding-right: 18px; }
+    .hero { padding: 32px 18px 28px; }
+    .controls { padding: 12px 18px; }
+    .footer { padding: 28px 18px; }
+    thead th:nth-child(5) { display: none; }
+    td:nth-child(5) { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-label">FSSAI / Codex Alimentarius · INS Complete Reference · India</div>
+  <h1>India Food Additives<br><span>INS Code Safety Index</span></h1>
+  <p class="hero-sub">
+    A comprehensive reference of all INS (International Numbering System) codes for food additives permitted and used in India under FSSAI regulations, with safety status, documented side effects, and scientific research references. Sources include FSSAI (2011/2022), FAO/WHO JECFA, EFSA, and peer-reviewed literature.
+  </p>
+  <div class="legend">
+    <div class="legend-item"><div class="dot dot-safe"></div> SAFE – no confirmed adverse human health effects at dietary levels</div>
+    <div class="legend-item"><div class="dot dot-caution"></div> CAUTION – conflicting evidence or specific populations at risk</div>
+    <div class="legend-item"><div class="dot dot-unsafe"></div> UNSAFE – confirmed harmful effects documented in research</div>
+  </div>
+</div>
+
+<div class="controls">
+  <input class="search-box" type="text" id="searchInput" placeholder="Search INS code, name, or compound..." oninput="filterTable()">
+  <button class="filter-btn active-all" id="btn-all" onclick="setFilter('all')">All</button>
+  <button class="filter-btn" id="btn-safe" onclick="setFilter('safe')">✓ Safe</button>
+  <button class="filter-btn" id="btn-caution" onclick="setFilter('caution')">⚠ Caution</button>
+  <button class="filter-btn" id="btn-unsafe" onclick="setFilter('unsafe')">✗ Unsafe</button>
+  <span class="count-badge" id="rowCount"></span>
+</div>
+
+<div class="table-wrap">
+<table id="mainTable">
+<thead>
+  <tr>
+    <th>INS Code</th>
+    <th>Name &amp; Compound</th>
+    <th>Status</th>
+    <th>Side Effects</th>
+    <th>Research References</th>
+  </tr>
+</thead>
+<tbody id="tableBody">
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- CATEGORY: COLOURS (100–182) -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<tr class="cat-row"><td colspan="5"><div class="cat-row-label">Colours — INS 100 to 182</div></td></tr>
+
+<tr data-status="safe" data-text="100 curcumin turmeric colour">
+  <td><div class="ins-code">100(i/ii)</div></td>
+  <td><div class="additive-name">Curcumin / Turmeric</div><div class="additive-compound">C₂₁H₂₀O₆ — Polyphenolic pigment from <em>Curcuma longa</em></div><div class="additive-use">Natural yellow-orange colour; used in dairy, bakery, pickles, mustard</div></td>
+  <td><span class="status-badge status-safe">✓ Safe</span></td>
+  <td><div class="side-effects"><span class="safe-note">Generally recognized as safe.</span> At very high supplemental doses: GI upset, nausea, diarrhoea. Rare contact dermatitis. May interact with anticoagulants (warfarin) at pharmacological doses — not a concern at food-use levels.</div></td>
+  <td><div class="refs"><span>JECFA — ADI "not specified" (1990)</span><span>Hewlings SJ, Kalman DS. Nutrients. 2017;9(10):1200.</span><span>Aggarwal BB et al. Ann NY Acad Sci. 2009;1171:5–23.</span></div></td>
+</tr>
+
+<tr data-status="safe" data-text="101 riboflavin vitamin b2 colour">
+  <td><div class="ins-code">101(i/ii/iii)</div></td>
+  <td><div class="additive-name">Riboflavin (Vitamin B₂)</div><div class="additive-compound">C₁₇H₂₀N₄O₆ — Synthetic / from Bacillus subtilis / as 5′-phosphate</div><div class="additive-use">Yellow-orange colour; also nutritive; dairy, cereals, pasta</div></td>
+  <td><span class="status-badge status-safe">✓ Safe</span></td>
+  <td><div class="side-effects"><span class="safe-note">Essential vitamin; safe at food use levels.</span> Extremely high supplemental doses may cause bright yellow urine (harmless), photosensitivity in rare cases.</div></td>
+  <td><div class="refs"><span>JECFA — ADI "not specified"</span><span>Powers HJ. Am J Clin Nutr. 2003;77(6):1352–1360.</span></div></td>
+</tr>
+
+<tr data-status="unsafe" data-text="102 tartrazine yellow fdc colour azo dye">
+  <td><div class="ins-code">102</div></td>
+  <td><div class="additive-name">Tartrazine</div><div class="additive-compound">C₁₆H₉N₄Na₃O₉S₂ — Synthetic azo dye (lemon yellow)</div><div class="additive-use">Yellow colour; soft drinks, confectionery, snacks, ice cream, jelly</div></td>
+  <td><span class="status-badge status-unsafe">✗ Unsafe</span></td>
+  <td><div class="side-effects"><strong>Hyperactivity in children</strong> (confirmed in landmark UK FSA study); <strong>urticaria, angioedema, asthma exacerbation</strong>, rhinitis in sensitive individuals; <strong>cross-reactivity with aspirin</strong>; occupational asthma in food workers. Contains sulfonyl groups linked to allergic responses. Some mutagenicity signals in in vitro studies.</div></td>
+  <td><div class="refs"><span>McCann D et al. Lancet. 2007;370(9598):1560–1567. [The "Southampton Study" — triggered EU/UK mandatory warning]</span><span>Rowe KS, Rowe KJ. J Pediatr. 1994;125(5):691–698.</span><span>Mpountoukas P et al. Food Chem Toxicol. 2010;48(10):2676–2681.</span><span>EFSA — reassessed 2009; ADI 7.5 mg/kg bw/day</span></div></td>
+</tr>
+
+<tr data-status="unsafe" data-text="104 quinoline yellow colour synthetic">
+  <td><div class="ins-code">104</div></td>
+  <td><div class="additive-name">Quinoline Yellow</div><div class="additive-compound">C₁₈H₉NNa₂O₈S₂ — Synthetic quinoline-based dye</div><div class="additive-use">Dull yellow-green colour; smoked fish, scotch eggs, some confectionery</div></td>
+  <td><span class="status-badge status-unsafe">✗ Unsafe</span></td>
+  <td><div class="side-effects"><strong>Part of the "Southampton Six"</strong> — included in UK FSA McCann 2007 study showing hyperactivity in children. <strong>Potential genotoxicity</strong> in vitro; linked to <strong>skin reactions, urticaria</strong>. Banned in USA and Australia for food use.</div></td>
+  <td><div class="refs"><span>McCann D et al. Lancet. 2007;370(9598):1560–1567.</span><span>Mpountoukas P et al. Food Chem Toxicol. 2010;48.</span><span>EFSA ANS Panel. EFSA Journal. 2009;7(11):1329.</span></div></td>
+</tr>
+
+<tr data-status="unsafe" data-text="110 sunset yellow fcf orange colour azo dye">
+  <td><div class="ins-code">110</div></td>
+  <td><div class="additive-name">Sunset Yellow FCF</div><div class="additive-compound">C₁₆H₁₀N₂Na₂O₇S₂ — Synthetic azo dye (orange-yellow)</div><div class="additive-use">Colour in beverages, jams, confectionery, ice cream, sauces</div></td>
+  <td><span class="status-badge status-unsafe">✗ Unsafe</span></td>
+  <td><div class="side-effects"><strong>Hyperactivity in children</strong> (McCann 2007); <strong>urticaria, allergic reactions</strong>, especially in aspirin-sensitive individuals; <strong>adrenal tumours in rodents</strong> at high doses; abdominal cramps, nausea. Metabolized to sulphanilic acid in gut. Genotoxic potential in some in vitro models.</div></td>
+  <td><div class="refs"><span>McCann D et al. Lancet. 2007;370(9598):1560–1567.</span><span>Sasaki YF et al. Mutat Res. 2002;519(1–2):103–119.</span><span>EFSA ANS Panel — Sunset Yellow FCF review. EFSA Journal. 2009;7(11):1330.</span></div></td>
+</tr>
+
+<tr data-status="caution" data-text="120 carmine cochineal red colour">
+  <td><div class="ins-code">120</div></td>
+  <td><div class="additive-name">Carmine / Cochineal</div><div class="additive-compound">C₂₂H₂₀O₁₃ — Aluminium lake of carminic acid from insect <em>Dactylopius coccus</em></div><div class="additive-use">Red colour; yogurt, juices, confectionery, cosmetics</div></td>
+  <td><span class="status-badge status-caution">⚠ Caution</span></td>
+  <td><div class="side-effects"><strong>Allergic reactions</strong> including <strong>anaphylaxis</strong> — well documented in hypersensitive individuals; <strong>occupational asthma</strong> in manufacturing workers; not suitable for vegetarians/vegans. Generally safe in non-allergic populations at regulatory doses.</div></td>
+  <td><div class="refs"><span>Chung K, Baker JR. Ann Allergy. 1992;68(3):267–269.</span><span>Lizaso MT et al. Allergy. 1997;52(12):1296–1297.</span><span>EFSA — ADI 5 mg/kg bw/day (2015)</span></div></td>
+</tr>
+
+<tr data-status="unsafe" data-text="122 carmoisine azorubine red colour azo dye">
+  <td><div class="ins-code">122</div></td>
+  <td><div class="additive-name">Carmoisine (Azorubine)</div><div class="additive-compound">C₂₀H₁₂N₂Na₂O₇S₂ — Synthetic azo dye (red)</div><div class="additive-use">Red colour; jelly, confectionery, marzipan, soft drinks</div></td>
+  <td><span class="status-badge status-unsafe">✗ Unsafe</span></td>
+  <td><div class="side-effects"><strong>Hyperactivity in children</strong> (McCann 2007 — one of the "Southampton Six"); <strong>urticaria, angioedema</strong>; aspirin-intolerance cross-reactivity; <strong>genotoxicity potential</strong> in some in vitro tests. Animal studies showed haematological effects at high doses.</div></td>
+  <td><div class="refs"><span>McCann D et al. Lancet. 2007;370(9598):1560–1567.</span><span>Tanaka T. Toxicol Lett. 2006;168:173–189.</span><span>EFSA ANS Panel. EFSA Journal. 2010;8(7):1632.</span></div></td>
+</tr>
+
+<tr data-status="unsafe" data-text="123 amaranth red colour azo dye banned">
+  <td><div class="ins-code">123</div></td>
+  <td><div class="additive-name">Amaranth</div><div class="additive-compound">C₂₀H₁₁N₂Na₃O₁₀S₃ — Synthetic azo dye (dark red-purple)</div><div class="additive-use">Red-purple colour; limited use in some foods</div></td>
+  <td><span class="status-badge status-unsafe">✗ Unsafe</span></td>
+  <td><div class="side-effects"><strong>Carcinogenicity concerns</strong> — animal studies showed malignant tumours; <strong>banned in USA (FDA, 1976)</strong> for most food uses. Linked to <strong>teratogenicity</strong> in animal studies; <strong>allergic reactions</strong> including urticaria. Metabolized to potentially toxic azo-amines.</div></td>
+  <td><div class="refs"><span>Volga M et al. Food Chem Toxicol. 1985.</span><span>US FDA 21 CFR — Delisted 1976.</span><span>EFSA CONTAM Panel — 2010 re-evaluation.</span></div></td>
+</tr>
+
+<tr data-status="unsafe" data-text="124 ponceau 4r cochineal red colour azo dye">
+  <td><div class="ins-code">124</div></td>
+  <td><div class="additive-name">Ponceau 4R (Cochineal Red A)</div><div class="additive-compound">C₂₀H₁₁N₂Na₃O₁₀S₃ — Synthetic azo dye (cherry red)</div><div class="additive-use">Red colour; canned strawberries, shrimp, confectionery, beverages</div></td>
+  <td><span class="status-badge status-unsafe">✗ Unsafe</span></td>
+  <td><div class="side-effects"><strong>Hyperactivity in children</strong> (McCann 2007 — Southampton Six); <strong>urticaria, allergic reactions</strong>; <strong>genotoxicity signals</strong> in comet assay; not approved in USA. Animal studies linked to carcinogenicity at very high doses. Aspirin cross-reactivity.</div></td>
+  <td><div class="refs"><span>McCann D et al. Lancet. 2007;370(9598):1560–1567.</span><span>Sasaki YF et al. Mutat Res. 2002;519:103–119.</span><span>EFSA ANS Panel. EFSA Journal. 2009;7(11):1328.</span></div></td>
+</tr>
+
+<tr data-status="unsafe" data-text="127 erythrosine red pink colour cherry fdc">
+  <td><div class="ins-code">127</div></td>
+  <td><div class="additive-name">Erythrosine</div><div class="additive-compound">C₂₀H₆I₄Na₂O₅ — Iodine-containing xanthene dye (cherry red)</div><div class="additive-use">Red colour; glazed cherries, tinned fruits, some confectionery</div></td>
+  <td><span class="status-badge status-unsafe">✗ Unsafe</span></td>
+  <td><div class="side-effects"><strong>High iodine content</strong> — can disrupt <strong>thyroid function</strong>; linked to <strong>thyroid tumours in rodents</strong>; <strong>photosensitivity reactions</strong>; <strong>ADHD-linked behaviours</strong> in children in some studies. Banned for most food uses in the EU and USA. Not recommended for individuals with thyroid conditions.</div></td>
+  <td><div class="refs"><span>FD&C Red No. 3 — FDA confirmed thyroid tumour risk in rats (1990)</span><span>Borzelleca JF et al. Toxicologist. 1987.</span><span>Lim P et al. EFSA Journal. 2011;9(1):1854.</span></div></td>
+</tr>
+
+<tr data-status="unsafe" data-text="129 allura red ac colour azo dye red 40">
+  <td><div class="ins-code">129</div></td>
+  <td><div class="additive-name">Allura Red AC</div><div class="additive-compound">C₁₈H₁₄N₂Na₂O₈S₂ — Synthetic azo dye (bright red)</div><div class="additive-use">Red colour; beverages, gelatins, condiments, dairy desserts</div></td>
+  <td><span class="status-badge status-unsafe">✗ Unsafe</span></td>
+  <td><div class="side-effects"><strong>Hyperactivity in children</strong> (McCann 2007); <strong>activates serotonin signalling</strong> in gut — linked to colitis/IBD exacerbation (2023 Cell study); <strong>genotoxic potential</strong>; urticaria; allergic responses. Animal data show tumour promotion at high doses. Growing evidence of gut microbiome disruption.</div></td>
+  <td><div class="refs"><span>McCann D et al. Lancet. 2007;370(9598):1560–1567.</span><span>Kwon YH et al. Nature Communications. 2022;13:3227.</span><span>Huo M et al. Cell. 2023 — colitis/gut microbiome.</span></div></td>
+</tr>
+
+<tr data-status="safe" data-text="132 indigotine indigo carmine blue colour">
+  <td><div class="ins-code">132</div></td>
+  <td><div class="additive-name">Indigotine (Indigo Carmine)</div><div class="additive-compound">C₁₆H₈N₂Na₂O₈S₂ — Synthetic indigoid dye (deep blue)</div><div class="additive-use">Blue colour; confectionery, ice cream, tablets, sugar coating</div></td>
+  <td><span class="status-badge status-caution">⚠ Caution</span></td>
+  <td><div class="side-effects"><strong>Low genotoxic concern.</strong> High doses in animal studies showed tumour-promotion effects. Rare: nausea, hypertension (intravenous medical uses). Approved in most countries but less studied than other azo dyes. Possible mild hypersensitivity reactions.</div></td>
+  <td><div class="refs"><span>EFSA ANS Panel. EFSA Journal. 2014;12(5):3671.</span><span>JECFA — ADI 5 mg/kg bw/day</span></div></td>
+</tr>
+
+<tr data-status="caution" data-text="133 brilliant blue fcf colour fdc blue 1">
+  <td><div class="ins-code">133</div></td>
+  <td><div class="additive-name">Brilliant Blue FCF</div><div class="additive-compound">C₃₇H₃₄N₂Na₂O₉S₃ — Synthetic triarylmethane dye (bright blue)</div><div class="additive-use">Blue colour; confectionery, beverages, dairy products, cereals</div></td>
+  <td><span class="status-badge status-caution">⚠ Caution</span></td>
+  <td><div class="side-effects">Linked to <strong>hyperactivity in children</strong> (part of broader Southampton concern); <strong>hypersensitivity reactions</strong>; potential to interfere with <strong>zinc absorption</strong>; some animal data suggest minor tumour promotion at very high doses. Generally considered safe at regulated levels.</div></td>
+  <td><div class="refs"><span>EFSA ANS Panel. EFSA Journal. 2010;8(11):1853.</span><span>Bellanger M et al. Neurotoxicol Teratol. 2015;49:41–47.</span></div></td>
+</tr>
+
+<tr data-status="safe" data-text="140 chlorophyll natural green colour">
+  <td><div class="ins-code">140</div></td>
+  <td><div class="additive-name">Chlorophylls</div><div class="additive-compound">Mg-porphyrin complex — extracted from green plants</div><div class="additive-use">Natural green colour; oils, soaps, confectionery, some beverages</div></td>
+  <td><span class="status-badge status-safe">✓ Safe</span></td>
+  <td><div class="side-effects"><span class="safe-note">No adverse effects at food use levels.</span> Very high supplemental intake may cause green discoloration of urine/faeces (harmless). Generally considered safe and nutritionally beneficial.</div></td>
+  <td><div class="refs"><span>JECFA — ADI "not specified"</span><span>Ferruzzi MG, Blakeslee J. J Nutr Biochem. 2007;18(5):306–322.</span></div></td>
+</tr>
+
+<tr data-status="safe" data-text="141 copper chlorophyll green colour">
+  <td><div class="ins-code">141(i/ii)</div></td>
+  <td><div class="additive-name">Copper Chlorophylls / Chlorophyllins</div><div class="additive-compound">Cu-substituted porphyrin — semi-synthetic; sodium/potassium salts</div><div class="additive-use">Stable green colour; canned vegetables, confectionery, dairy</div></td>
+  <td><span class="status-badge status-caution">⚠ Caution</span></td>
+  <td><div class="side-effects">Introduces <strong>copper</strong> — at extremely high levels could contribute to copper toxicity in susceptible individuals (Wilson's disease). Regulated doses pose no concern for healthy individuals. Watch for: <strong>nausea at very high dietary intake</strong>.</div></td>
+  <td><div class="refs"><span>EFSA — copper tolerable upper intake level 5 mg/day (adults)</span><span>JECFA — ADI 15 mg/kg bw/day (as copper)</span></div></td>
+</tr>
+
+<tr data-status="caution" data-text="142 green s colour synthetic dye">
+  <td><div class="ins-code">142</div></td>
+  <td><div class="additive-name">Green S</div><div class="additive-compound">C₂₇H₂₅N₂NaO₇S₂ — Synthetic triarylmethane dye</div><div class="additive-use">Green colour; peas (canned), mint jelly, confectionery</div></td>
+  <td><span class="status-badge status-caution">⚠ Caution</span></td>
+  <td><div class="side-effects">Not approved in USA or several other countries. Some evidence of <strong>sensitivity reactions</strong>; liver effects at high experimental doses in rodents. Limited human safety data.</div></td>
+  <td><div class="refs"><span>EFSA ANS Panel — re-evaluation 2015. EFSA Journal. 2015;13(6):4121.</span></div></td>
+</tr>
+
+<tr data-status="caution" data-text="143 fast green fcf colour fdc">
+  <td><div class="ins-code">143</div></td>
+  <td><div class="additive-name">Fast Green FCF</div><div class="additive-compound">C₃₇H₃₄N₂Na₂O₁₀S₃ — Synthetic triarylmethane dye (blue-green)</div><div class="additive-use">Green colour; canned vegetables, confectionery, dairy</div></td>
+  <td><span class="status-badge status-caution">⚠ Caution</span></td>
+  <td><div class="side-effects">Not permitted in EU. Animal studies at high doses showed <strong>bladder tumours</strong>; some <strong>hypersensitivity reports</strong>. Regulatory status is inconsistent globally, indicating unresolved safety concerns.</div></td>
+  <td><div class="refs"><span>JECFA — ADI 25 mg/kg bw/day</span><span>Haveland-Smith RB, Combes RD. Food Cosmet Toxicol. 1980;18(3):215–221.</span></div></td>
+</tr>
+
+<tr data-status="caution" data-text="150a 150b 150c 150d caramel colour ammonia sulphite">
+  <td><div class="ins-code">150a–150d</div></td>
+  <td><div class="additive-name">Caramels (I–IV)</div><div class="additive-compound">Complex polymers from heat-treated carbohydrates (plain / sulphite / ammonia / ammonia-sulphite processes)</div><div class="additive-use">Brown colour; colas, sauces, beer, bread, gravy, whisky</div></td>
+  <td><span class="status-badge status-caution">⚠ Caution</span></td>
+  <td><div class="side-effects"><strong>150c &amp; 150d (ammonia-process)</strong>: produce <strong>4-methylimidazole (4-MEI)</strong> — classified as <strong>possible human carcinogen (Group 2B)</strong> by IARC; California Prop 65 triggers. <strong>150a, 150b</strong>: safer; lower 4-MEI. Immune effects in some animal studies (caramel III/IV). High fructose content in 150c raises metabolic concerns.</div></td>
+  <td><div class="refs"><span>IARC Monograph Vol. 101 — 4-MEI: Group 2B (2013)</span><span>Schut HA, Sugimura T. Cancer Res. 1984.</span><span>EFSA ANS Panel. EFSA Journal. 2011;9(3):2004.</span><span>California OEHHA — Prop 65 listing of 4-MEI (2011)</span></div></td>
+</tr>
+
+<tr data-status="caution" data-text="151 brilliant black bn colour synthetic">
+  <td><div class="ins-code">151</div></td>
+  <td><div class="additive-name">Brilliant Black BN (Black PN)</div><div class="additive-compound">C₂₈H₁₇N₄Na₅O₁₄S₄ — Synthetic azo dye (black)</div><div class="additive-use">Black colour; blackcurrant products, pastilles, sauces</div></td>
+  <td><span class="status-badge status-caution">⚠ Caution</span></td>
+  <td><div class="side-effects">Not permitted in USA, Canada, Japan. Linked to <strong>mild hyperactivity concerns</strong>; <strong>gastrointestinal distress</strong> in some individuals. Genotoxicity potential in in vitro tests; some reproductive toxicity signals in animal models.</div></td>
+  <td><div class="refs"><span>EFSA ANS Panel. EFSA Journal. 2013;11(7):3282.</span></div></td>
+</tr>
+
+<tr data-status="safe" data-text="160a beta carotene colour natural vitamin a">
+  <td><div class="ins-code">160a(i–iv)</div></td>
+  <td><div class="additive-name">Beta-Carotene (synthetic / vegetable / algae)</div><div class="additive-compound">C₄₀H₅₆ — Carotenoid (orange-yellow); provitamin A</div><div class="additive-use">Orange-yellow colour; margarine, dairy, beverages, baked goods</div></td>
+  <td><span class="status-badge status-safe">✓ Safe</span></td>
+  <td><div class="side-effects"><span class="safe-note">Safe at food use levels.</span> Very high supplemental doses: <strong>carotenodermia</strong> (orange skin, reversible). Critically: <strong>high-dose supplementation in smokers</strong> linked to increased lung cancer risk (ATBC and CARET trials) — this is a supplement concern, NOT food-use concern.</div></td>
+  <td><div class="refs"><span>ATBC Study Group. NEJM. 1994;330:1029–1035.</span><span>Omenn GS et al. NEJM. 1996;334:1150–1155.</span><span>JECFA — ADI "not specified" for food use</span></div></td>
+</tr>
+
+<tr data-status="safe" data-text="160b annatto bixin norbixin colour natural">
+  <td><div class="ins-code">160b(i/ii)</div></td>
+  <td><div class="additive-name">Annatto Extracts (Bixin / Norbixin)</div><div class="additive-compound">Carotenoid-related pigments from <em>Bixa orellana</em> seeds (orange-red)</div><div class="additive-use">Orange colour; cheese, butter, smoked fish, snacks, cereals</div></td>
+  <td><span class="status-badge status-caution">⚠ Caution</span></td>
+  <td><div class="side-effects">Norbixin-based: linked to <strong>allergic reactions</strong> including urticaria, angioedema; one <strong>anaphylaxis case</strong> reported. Bixin: hypersensitivity in some. Generally safe but one of the more commonly identified allergens among natural colours.</div></td>
+  <td><div class="refs"><span>Nish WA et al. Ann Allergy. 1991;66(2):129–131.</span><span>EFSA ANS Panel. EFSA Journal. 2007;5(7):484.</span></div></td>
+</tr>
+
+<tr data-status="safe" data-text="160c paprika oleoresin colour red">
+  <td><div class="ins-code">160c(i/ii)</div></td>
+  <td><div class="additive-name">Paprika Oleoresin / Extract</div><div class="additive-compound">Capsanthin, capsorubin, beta-carotene — from <em>Capsicum annuum</em></div><div class="additive-use">Red-orange colour; processed meats, dairy, sauces, snacks</div></td>
+  <td><span class="status-badge status-safe">✓ Safe</span></td>
+  <td><div class="side-effects"><span class="safe-note">Generally recognized as safe.</span> Rare: mild GI irritation at high concentrations. No significant safety concerns at food-use levels.</div></td>
+  <td><div class="refs"><span>JECFA — ADI "not specified"</span><span>EFSA ANS Panel. EFSA Journal. 2016;14(8):4544.</span></div></td>
+</tr>
+
+<tr data-status="safe" data-text="160d lycopene tomato colour carotenoid">
+  <td><div class="ins-code">160d(i–iii)</div></td>
+  <td><div class="additive-name">Lycopenes (synthetic / tomato / Blakeslea)</div><div class="additive-compound">C₄₀H₅₆ — Carotenoid (red) from tomatoes or fungal fermentation</div><div class="additive-use">Red colour; tomato products, soups, beverages, supplements</div></td>
+  <td><span class="status-badge status-safe">✓ Safe</span></td>
+  <td><div class="side-effects"><span class="safe-note">Safe at food use levels; evidence of cardiovascular and cancer-protective properties.</span> Very high intake: lycopenodermia (reversible orange discoloration). No confirmed adverse effects in humans at dietary levels.</div></td>
+  <td><div class="refs"><span>Giovannucci E et al. J Natl Cancer Inst. 1995;87(23):1767–1776.</span><span>EFSA ANS Panel. EFSA Journal. 2008;6(8):674.</span></div></td>
+</tr>
+
+<tr data-status="safe" data-text="160e 160f beta apo carotenal colour">
+  <td><div class="ins-code">160e / 160f</div></td>
+  <td><div class="additive-name">Beta-Apo-8'-Carotenal / Its Methyl & Ethyl Esters</div><div class="additive-compound">Apocarotenoid (yellow-orange)</div><div class="additive-use">Colour in margarine, dairy, beverages</div></td>
+  <td><span class="status-badge status-safe">✓ Safe</span></td>
+  <td><div class="side-effects"><span class="safe-note">Considered safe at food use levels.</span> Provitamin A activity; excess: same carotenodermia as beta-carotene (reversible).</div></td>
+  <td><div class="refs"><span>JECFA — ADI 0–5 mg/kg bw/day</span></div></td>
+</tr>
+
+<tr data-status="safe" data-text="161g canthaxanthin colour pink red">
+  <td><div class="ins-code">161g</div></td>
+  <td><div class="additive-name">Canthaxanthin</div><div class="additive-compound">C₄₀H₅₂O₂ — Carotenoid (pink-orange)</div><div class="additive-use">Colour in salmon, shrimp, poultry feeds; confectionery</div></td>
+  <td><span class="status-badge status-caution">⚠ Caution</span></td>
+  <td><div class="side-effects">At high supplemental doses: <strong>retinal crystal deposits (canthaxanthin retinopathy)</strong> — reversible but documented in tanning supplement misuse. At food-use levels (much lower), considered safe. EFSA reduced ADI to 0.03 mg/kg bw/day due to retinal concerns.</div></td>
+  <td><div class="refs"><span>Goralczyk R et al. Invest Ophthalmol Vis Sci. 1997;38(4):741–752.</span><span>EFSA ANS Panel. EFSA Journal. 2010;8(10):1852.</span></div></td>
+</tr>
+
+<tr data-status="safe" data-text="162 beet red betanin colour natural">
+  <td><div class="ins-code">162</div></td>
+  <td><div class="additive-name">Beet Red (Betanin)</div><div class="additive-compound">Betacyanin pigment from <em>Beta vulgaris</em> (red)</div><div class="additive-use">Red-purple colour; ice cream, confectionery, meat products, dairy</div></td>
+  <td><span class="status-badge status-safe">✓ Safe</span></td>
+  <td><div class="side-effects"><span class="safe-note">Safe; natural origin.</span> High intake: <strong>beeturia</strong> (red urine/faeces — harmless). Antioxidant properties. No confirmed toxicity.</div></td>
+  <td><div class="refs"><span>JECFA — ADI "not specified"</span><span>Stintzing FC, Carle R. Trends Food Sci Technol. 2004;15(1):19–38.</span></div></td>
+</tr>
+
+<tr data-status="safe" data-text="163 anthocyanins grape blackcurrant purple colour">
+  <td><div class="ins-code">163(ii–vi)</div></td>
+  <td><div class="additive-name">Anthocyanins (Grape / Blackcurrant / Purple Corn / Red Cabbage / Black Carrot)</div><div class="additive-compound">Flavonoid pigments — natural plant pigments (red, purple, blue)</div><div class="additive-use">Colour; beverages, jams, confectionery, yogurts</div></td>
+  <td><span class="status-badge status-safe">✓ Safe</span></td>
+  <td><div class="side-effects"><span class="safe-note">Safe; well-studied antioxidants with cardiovascular benefits.</span> Possible stool discoloration (harmless). No significant adverse effects.</div></td>
+  <td><div class="refs"><span>Tsuda T. J Agric Food Chem. 2012;60(7):1646–1653.</span><span>EFSA — ADI "not specified"</span></div></td>
+</tr>
+
+<tr data-status="caution" data-text="171 titanium dioxide colour white e171">
+  <td><div class="ins-code">171</div></td>
+  <td><div class="additive-name">Titanium Dioxide</div><div class="additive-compound">TiO₂ — White inorganic pigment (nano and non-nano forms)</div><div class="additive-use">White colour / opacity; confectionery, chewing gum, icing, medicines</div></td>
+  <td><span class="status-badge status-unsafe">✗ Unsafe</span></td>
+  <td><div class="side-effects"><strong>BANNED in EU (2022)</strong> following EFSA finding that it "cannot be considered safe." Nanoparticles: <strong>genotoxic potential</strong>; <strong>DNA damage</strong> in in vitro studies; gut microbiome disruption; <strong>immune system effects</strong>; inflammation in intestinal cells; developmental neurotoxicity concerns in animal studies. IARC Group 2B possible carcinogen (inhalation; food risk still evaluated).</div></td>
+  <td><div class="refs"><span>EFSA ANS Panel — Safety of TiO₂ as food additive. EFSA Journal. 2021;19(5):6585. [Led to EU ban]</span><span>Proquin H et al. Mutagenesis. 2017;32(1):139–150.</span><span>Bettini S et al. Nanotoxicology. 2017;11(4):462–473.</span><span>IARC Group 2B — TiO₂ (inhalation); EU Reg 2022/63</span></div></td>
+</tr>
+
+<tr data-status="safe" data-text="172 iron oxides black red yellow colour">
+  <td><div class="ins-code">172(i/ii/iii)</div></td>
+  <td><div class="additive-name">Iron Oxides (Black / Red / Yellow)</div><div class="additive-compound">Fe₂O₃, Fe₃O₄, FeO·OH — Mineral pigments</div><div class="additive-use">Colour in confectionery coatings, olives, pasta, salmon products</div></td>
+  <td><span class="status-badge status-safe">✓ Safe</span></td>
+  <td><div class="side-effects"><span class="safe-note">Generally recognized as safe.</span> Contributes small amount of iron. In iron-overload conditions (haemochromatosis), any added iron source should be monitored, though amounts from food colour use are minimal.</div></td>
+  <td><div class="refs"><span>JECFA — ADI 0.5 mg/kg bw/day</span><span>EFSA ANS Panel. EFSA Journal. 2015;13(10):4317.</span></div></td>
+</tr>
+
+<tr data-status="caution" data-text="173 aluminium powder colour silver decorative">
+  <td><div class="ins-code">173</div></td>
+  <td><div class="additive-name">Aluminium Powder</div><div class="additive-compound">Al — Metallic aluminium (silver surface colour)</div><div class="additive-use">Surface colour for confectionery (decorative only)</div></td>
+  <td><span class="status-badge status-caution">⚠ Caution</span></td>
+  <td><div class="side-effects">Aluminium linked to <strong>neurotoxicity</strong> at high exposures; associated with <strong>Alzheimer's disease</strong> risk in epidemiological studies (controversial). Regulatory bodies restrict total dietary aluminium. At decorative surface-use levels, systemic absorption is low. Not recommended for infants.</div></td>
+  <td><div class="refs"><span>Exley C. Neurodegener Dis Manag. 2014;4(1):77–79.</span><span>EFSA ANS Panel — Aluminium dietary exposure. EFSA Journal. 2011;9(7):2295.</span></div></td>
+</tr>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- CATEGORY: PRESERVATIVES (200–291) -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<tr class="cat-row"><td colspan="5"><div class="cat-row-label">Preservatives — INS 200 to 297</div></td></tr>
+
+<tr data-status="safe" data-text="200 201 202 203 sorbic acid potassium sorbate preservative">
+  <td><div class="ins-code">200–203</div></td>
+  <td><div class="additive-name">Sorbic Acid &amp; Sorbates (Na / K / Ca)</div><div class="additive-compound">CH₃CH=CH–CH=CH–COOH — Naturally occurring unsaturated fatty acid &amp; salts</div><div class="additive-use">Preservative against moulds/yeasts; bread, dairy, jams, wine, beverages</div></td>
+  <td><span class="status-badge status-safe">✓ Safe</span></td>
+  <td><div class="side-effects"><span class="safe-note">Generally very safe; metabolized naturally in the body.</span> Rare: <strong>contact dermatitis</strong>, urticaria in hypersensitive individuals. Pseudoallergic reactions. No carcinogenicity or genotoxicity concerns.</div></td>
+  <td><div class="refs"><span>JECFA — ADI 0–25 mg/kg bw/day</span><span>Walker R. Food Addit Contam. 1990;7(5):671–676.</span></div></td>
+</tr>
+
+<tr data-status="unsafe" data-text="210 211 212 213 benzoic acid sodium benzoate preservative">
+  <td><div class="ins-code">210–213</div></td>
+  <td><div class="additive-name">Benzoic Acid &amp; Benzoates (Na / K / Ca)</div><div class="additive-compound">C₆H₅COOH — Aromatic carboxylic acid &amp; its salts</div><div class="additive-use">Preservative; soft drinks, fruit juices, pickles, condiments, marinades</div></td>
+  <td><span class="status-badge status-unsafe">✗ Unsafe</span></td>
+  <td><div class="side-effects"><strong>Sodium benzoate + ascorbic acid → benzene (known carcinogen)</strong> in acidic beverages — major concern in soft drinks; <strong>hyperactivity in children</strong> (McCann 2007); <strong>urticaria, angioedema, asthma</strong> exacerbation; aspirin cross-reactivity; may deplete glycine/carnitine; oxidative stress in mitochondria documented. Children and asthmatics most vulnerable.</div></td>
+  <td><div class="refs"><span>McCann D et al. Lancet. 2007;370(9598):1560–1567.</span><span>Gardner LK, Lawrence GD. J Agric Food Chem. 1993;41(5):693–695. [Benzene formation]</span><span>Piper PW. Yeast. 1999;15(10B):1197–1209.</span></div></td>
+</tr>
+
+<tr data-status="caution" data-text="214 215 216 217 218 219 parabens hydroxybenzoate preservative">
+  <td><div class="ins-code">214–219</div></td>
+  <td><div class="additive-name">Para-Hydroxybenzoates (Parabens) — Ethyl / Propyl / Methyl &amp; their Na salts</div><div class="additive-compound">4-HOC₆H₄COOR — Esters of para-hydroxybenzoic acid</div><div class="additive-use">Preservative; beverages, bakery, cosmetics, pharmaceuticals</div></td>
+  <td><span class="status-badge status-caution">⚠ Caution</span></td>
+  <td><div class="side-effects"><strong>Weak oestrogenic activity</strong> — endocrine disruption concern; detected in <strong>breast tumour tissue</strong> in some studies; <strong>reproductive toxicity</strong> signals (propylparaben) in male rodents; allergic contact dermatitis. Several countries have restricted use in products for infants.</div></td>
+  <td><div class="refs"><span>Darbre PD et al. J Appl Toxicol. 2004;24(1):5–13.</span><span>Boberg J et al. Toxicol Sci. 2010;114(2):249–261.</span><span>EFSA ANS Panel — Propyl/butylparaben. 2013.</span></div></td>
+</tr>
+
+<tr data-status="unsafe" data-text="220 221 222 223 224 225 226 227 228 sulphur dioxide sulphites preservative">
+  <td><div class="ins-code">220–228</div></td>
+  <td><div class="additive-name">Sulphur Dioxide &amp; Sulphites (Na/K/Ca/H bisulphite, metabisulphite)</div><div class="additive-compound">SO₂ / Na₂SO₃ / Na₂S₂O₅ / K₂S₂O₅ — Inorganic sulphur compounds</div><div class="additive-use">Preservative/antioxidant; wine, beer, dried fruits, sausages, shrimp, gelatin, corn syrup</div></td>
+  <td><span class="status-badge status-unsafe">✗ Unsafe</span></td>
+  <td><div class="side-effects"><strong>Asthma attacks</strong> — sulphite-sensitive individuals (1–2% population, up to 5% of asthmatics can suffer severe attacks); <strong>anaphylaxis</strong> (rare but documented); <strong>headaches, nausea</strong>, skin reactions; <strong>destroys thiamine</strong> (Vitamin B1); neurological effects at very high doses; occupational respiratory disease in winery workers.</div></td>
+  <td><div class="refs"><span>Bush RK et al. J Allergy Clin Immunol. 1986;78(6):1034–1039.</span><span>Taylor SL et al. J Food Prot. 1988;51(6):481–484.</span><span>EFSA ANS Panel. EFSA Journal. 2016;14(4):4438.</span></div></td>
+</tr>
+
+<tr data-status="unsafe" data-text="230 diphenyl fungicide preservative citrus">
+  <td><div class="ins-code">230</div></td>
+  <td><div class="additive-name">Diphenyl (Biphenyl)</div><div class="additive-compound">C₁₂H₁₀ — Aromatic hydrocarbon fungicide</div><div class="additive-use">Surface preservative on citrus fruit packaging/wrappers</div></td>
+  <td><span class="status-badge status-unsafe">✗ Unsafe</span></td>
+  <td><div class="side-effects"><strong>Banned in EU.</strong> Animal studies show <strong>liver and kidney toxicity</strong>; <strong>neurotoxic effects</strong>; dermatitis; GI irritation. Potential carcinogen. Not approved in USA for food use. Classified as irritant.</div></td>
+  <td><div class="refs"><span>EU Regulation (EC) No 1333/2008 — Not listed (effectively banned)</span><span>EFSA — not evaluated as no longer authorized in EU</span></div></td>
+</tr>
+
+<tr data-status="unsafe" data-text="234 nisin preservative antimicrobial antibiotic">
+  <td><div class="ins-code">234</div></td>
+  <td><div class="additive-name">Nisin</div><div class="additive-compound">Polycyclic peptide antibiotic from <em>Lactococcus lactis</em></div><div class="additive-use">Preservative; processed cheese, canned goods, rasgolla, paneer</div></td>
+  <td><span class="status-badge status-caution">⚠ Caution</span></td>
+  <td><div class="side-effects">Generally considered safe; natural antibiotic. <strong>Concern: antimicrobial resistance</strong> — regular dietary exposure may contribute to resistance development in gut bacteria. Not absorbed in GI tract. Some argue against routine use given antibiotic resistance crisis.</div></td>
+  <td><div class="refs"><span>JECFA — ADI 0–33,000 IU/kg bw/day</span><span>Cotter PD et al. Nat Rev Microbiol. 2005;3(10):777–788.</span></div></td>
+</tr>
+
+<tr data-status="safe" data-text="235 natamycin pimaricin antifungal preservative">
+  <td><div class="ins-code">235</div></td>
+  <td><div class="additive-name">Natamycin (Pimaricin)</div><div class="additive-compound">C₃₃H₄₇NO₁₃ — Polyene antifungal from <em>Streptomyces natalensis</em></div><div class="additive-use">Antifungal on cheese surface, dry/cured sausages</div></td>
+  <td><span class="status-badge status-caution">⚠ Caution</span></td>
+  <td><div class="side-effects">Similar antibiotic resistance concern as nisin. At dietary levels considered safe; poor intestinal absorption. Rare GI symptoms. Medical use as antifungal agent — cross-resistance theoretically possible.</div></td>
+  <td><div class="refs"><span>JECFA — ADI 0–0.3 mg/kg bw/day</span><span>Thomas LV, Delves-Broughton J. Adv Appl Microbiol. 2001;50:153–181.</span></div></td>
+</tr>
+
+<tr data-status="unsafe" data-text="239 hexamethylene tetramine hexamine preservative">
+  <td><div class="ins-code">239</div></td>
+  <td><div class="additive-name">Hexamethylene Tetramine</div><div class="additive-compound">(CH₂)₆N₄ — Formaldehyde-releasing compound</div><div class="additive-use">Preservative; provolone cheese (surface), marinated herring</div></td>
+  <td><span class="status-badge status-unsafe">✗ Unsafe</span></td>
+  <td><div class="side-effects"><strong>Releases formaldehyde</strong> upon acidification — <strong>formaldehyde is a known carcinogen (Group 1, IARC)</strong>; GI irritation; urinary tract irritation (used medically as UTI drug). <strong>Banned in many countries including EU.</strong></div></td>
+  <td><div class="refs"><span>IARC Monographs Vol. 100F — Formaldehyde: Group 1 carcinogen (2012)</span><span>WHO Food Additives Series — Hexamine 1974.</span></div></td>
+</tr>
+
+<tr data-status="unsafe" data-text="249 250 sodium nitrite potassium nitrite colour fixative preservative cured meat">
+  <td><div class="ins-code">249 / 250</div></td>
+  <td><div class="additive-name">Potassium Nitrite / Sodium Nitrite</div><div class="additive-compound">KNO₂ / NaNO₂ — Inorganic nitrogen compounds</div><div class="additive-use">Colour fixative &amp; preservative; cured meats (bacon, ham, hot dogs, sausages)</div></td>
+  <td><span class="status-badge status-unsafe">✗ Unsafe</span></td>
+  <td><div class="side-effects"><strong>IARC Group 1 carcinogen</strong> when consumed in processed meats (2015); forms <strong>nitrosamines</strong> — potent carcinogens linked to <strong>colorectal, stomach, oesophageal cancer</strong>; can cause <strong>methaemoglobinaemia</strong> (especially dangerous in infants — blue baby syndrome); implicated in <strong>type 1 diabetes risk</strong> in children. Sodium nitrite acutely toxic above regulatory doses (lethal dose risk).</div></td>
+  <td><div class="refs"><span>IARC Monograph Vol. 114 — Nitrite/nitrate from processed meat: Group 1 (2015)</span><span>Bouvard V et al. Lancet Oncol. 2015;16(16):1599–1600.</span><span>Mirvish SS. Cancer Lett. 1995;93(1):17–48.</span><span>WHO IARC — Processed meat &amp; cancer. 2015.</span></div></td>
+</tr>
+
+<tr data-status="unsafe" data-text="251 252 sodium nitrate potassium nitrate colour fixative preservative">
+  <td><div class="ins-code">251 / 252</div></td>
+  <td><div class="additive-name">Sodium Nitrate / Potassium Nitrate (Saltpetre)</div><div class="additive-compound">NaNO₃ / KNO₃ — Inorganic nitrogen oxidants</div><div class="additive-use">Colour fixative &amp; preservative; cured meats, cheese, some fish products</div></td>
+  <td><span class="status-badge status-unsafe">✗ Unsafe</span></td>
+  <td><div class="side-effects">Converted to nitrite in the body → same <strong>nitrosamine carcinogenicity concerns</strong> as 249/250; <strong>methaemoglobinaemia</strong> risk (especially infants); oxidative stress; hypertensive effects at high intake; contaminated water from agricultural use linked to <strong>colorectal cancer</strong> epidemiologically. IARC Group 2A — probably carcinogenic.</div></td>
+  <td><div class="refs"><span>IARC Monograph Vol. 94 — Ingested nitrate &amp; nitrite: Group 2A (2010)</span><span>Dellavalle CT et al. Carcinogenesis. 2013;34(11):2504–2510.</span></div></td>
+</tr>
+
+<tr data-status="safe" data-text="260 261 262 263 264 acetic acid acetates preservative">
+  <td><div class="ins-code">260–264</div></td>
+  <td><div class="additive-name">Acetic Acid &amp; Acetates (K / Na / Ca / Ammonium)</div><div class="additive-compound">CH₃COOH &amp; salts — Carboxylic acid (vinegar component)</div><div class="additive-use">Acidity regulator &amp; preservative; pickles, bread, sauces, dressings</div></td>
+  <td><span class="status-badge status-safe">✓ Safe</span></td>
+  <td><div class="side-effects"><span class="safe-note">Natural component of food; generally very safe.</span> Excess: dental erosion (acidic beverages); GI discomfort. No carcinogenicity or reproductive toxicity concerns at food-use levels.</div></td>
+  <td><div class="refs"><span>JECFA — ADI "not specified"</span></div></td>
+</tr>
+
+<tr data-status="safe" data-text="270 lactic acid acidity regulator preservative">
+  <td><div class="ins-code">270</div></td>
+  <td><div class="additive-name">Lactic Acid (L-, D-, DL-)</div><div class="additive-compound">CH₃CH(OH)COOH — Alpha-hydroxy acid (natural fermentation product)</div><div class="additive-use">Acidity regulator; dairy, beer, pickles, confectionery</div></td>
+  <td><span class="status-badge status-safe">✓ Safe</span></td>
+  <td><div class="side-effects"><span class="safe-note">Natural metabolite; safe at food use levels.</span> D-lactic acid excess (from certain fermented foods): potential <strong>D-lactic acidosis</strong> in patients with short bowel syndrome (not relevant to healthy individuals).</div></td>
+  <td><div class="refs"><span>JECFA — ADI "not specified"</span></div></td>
+</tr>
+
+<tr data-status="safe" data-text="280 281 282 283 propionic acid propionates preservative bread mould">
+  <td><div class="ins-code">280–283</div></td>
+  <td><div class="additive-name">Propionic Acid &amp; Propionates (Na / Ca / K)</div><div class="additive-compound">CH₃CH₂COOH — Short-chain fatty acid &amp; salts</div><div class="additive-use">Mould inhibitor; bread, cakes, pizza bases</div></td>
+  <td><span class="status-badge status-caution">⚠ Caution</span></td>
+  <td><div class="side-effects">Generally considered safe at regulatory levels. Recent research: <strong>propionic acid at high levels may affect brain function</strong> — linked to <strong>autism spectrum disorder (ASD) mitochondrial dysfunction</strong> in animal models. <strong>Migraines</strong> triggered in susceptible individuals. Industrial production concerns.</div></td>
+  <td><div class="refs"><span>MacFabe DF. Curr Opin Clin Nutr Metab Care. 2015;18(6):552–560.</span><span>El-Ansary AK et al. J Neuroinflammation. 2011;8:140.</span><span>JECFA — ADI "not specified"</span></div></td>
+</tr>
+
+<tr data-status="safe" data-text="290 carbon dioxide co2 carbonating preservative">
+  <td><div class="ins-code">290</div></td>
+  <td><div class="additive-name">Carbon Dioxide</div><div class="additive-compound">CO₂ — Inorganic gas</div><div class="additive-use">Carbonating agent; fizzy drinks, beer, sparkling water, packaging gas</div></td>
+  <td><span class="status-badge status-safe">✓ Safe</span></td>
+  <td><div class="side-effects"><span class="safe-note">Safe; natural metabolite of respiration.</span> Carbonated beverages: bloating, gas, discomfort. Excessive intake: contributes to dental erosion (acidic pH) — concern is from associated acidity, not CO₂ directly.</div></td>
+  <td><div class="refs"><span>JECFA — ADI "not specified"</span></div></td>
+</tr>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- CATEGORY: ANTIOXIDANTS (300–321) -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<tr class="cat-row"><td colspan="5"><div class="cat-row-label">Antioxidants — INS 300 to 392</div></td></tr>
+
+<tr data-status="safe" data-text="300 301 302 303 ascorbic acid vitamin c antioxidant">
+  <td><div class="ins-code">300–303</div></td>
+  <td><div class="additive-name">Ascorbic Acid (Vitamin C) &amp; Ascorbates (Na / Ca / K)</div><div class="additive-compound">C₆H₈O₆ — Naturally occurring vitamin &amp; antioxidant</div><div class="additive-use">Antioxidant; beverages, meat, canned fruit, flour treatment</div></td>
+  <td><span class="status-badge status-safe">✓ Safe</span></td>
+  <td><div class="side-effects"><span class="safe-note">Essential nutrient; safe.</span> Very high supplemental doses: <strong>kidney stones</strong> (oxalate); GI upset, diarrhoea. <strong>With sodium benzoate (211): produces benzene</strong> — that's a combination concern, not ascorbic acid alone.</div></td>
+  <td><div class="refs"><span>JECFA — ADI "not specified"</span><span>Levine M et al. PNAS. 1996;93(8):3704–3709.</span></div></td>
+</tr>
+
+<tr data-status="safe" data-text="304 305 ascorbyl palmitate stearate antioxidant fat soluble">
+  <td><div class="ins-code">304 / 305</div></td>
+  <td><div class="additive-name">Ascorbyl Palmitate / Stearate</div><div class="additive-compound">Fat-soluble esters of ascorbic acid</div><div class="additive-use">Antioxidant in fats, oils, confectionery</div></td>
+  <td><span class="status-badge status-safe">✓ Safe</span></td>
+  <td><div class="side-effects"><span class="safe-note">Safe at food use levels.</span> Hydrolyzed to ascorbic acid and fatty acid in body. No specific concerns at dietary levels.</div></td>
+  <td><div class="refs"><span>JECFA — ADI 0–1.25 mg/kg bw/day</span></div></td>
+</tr>
+
+<tr data-status="safe" data-text="307 tocopherol vitamin e antioxidant">
+  <td><div class="ins-code">307a/b/c</div></td>
+  <td><div class="additive-name">Tocopherols (d-alpha / mixed / dl-alpha) — Vitamin E</div><div class="additive-compound">C₂₉H₅₀O₂ — Fat-soluble vitamin antioxidant</div><div class="additive-use">Antioxidant in oils, fats, margarines, bakery</div></td>
+  <td><span class="status-badge status-safe">✓ Safe</span></td>
+  <td><div class="side-effects"><span class="safe-note">Essential vitamin; safe at food use levels.</span> Very high supplemental doses: <strong>anticoagulant effects</strong> (reduces platelet aggregation); may increase bleeding risk. At regulatory food-use amounts, no adverse effects.</div></td>
+  <td><div class="refs"><span>JECFA — ADI "not specified" (natural forms)</span><span>Traber MG. Adv Nutr. 2014;5(5):503–514.</span></div></td>
+</tr>
+
+<tr data-status="caution" data-text="310 311 312 313 gallates propyl octyl dodecyl antioxidant">
+  <td><div class="ins-code">310–313</div></td>
+  <td><div class="additive-name">Gallates (Propyl / Octyl / Dodecyl / Ethyl)</div><div class="additive-compound">Esters of gallic acid with fatty alcohols</div><div class="additive-use">Antioxidant; oils, fats, instant noodle soups, chewing gum</div></td>
+  <td><span class="status-badge status-caution">⚠ Caution</span></td>
+  <td><div class="side-effects"><strong>Allergic reactions</strong>; <strong>contact dermatitis</strong>; <strong>gastric irritation</strong>; potential <strong>oestrogenic activity</strong> (propyl gallate); methaemoglobinaemia at high doses. Not recommended for infants or people with aspirin sensitivity.</div></td>
+  <td><div class="refs"><span>EFSA ANS Panel — Propyl gallate. EFSA Journal. 2014;12(4):3642.</span><span>Hausen BM. Contact Dermatitis. 1996;34(3):165–172.</span></div></td>
+</tr>
+
+<tr data-status="unsafe" data-text="319 tbhq tertiary butylhydroquinone antioxidant oil">
+  <td><div class="ins-code">319</div></td>
+  <td><div class="additive-name">TBHQ (Tertiary Butylhydroquinone)</div><div class="additive-compound">C₁₀H₁₄O₂ — Synthetic phenolic antioxidant</div><div class="additive-use">Antioxidant in vegetable oils, fats, snacks, fast food, instant noodles</div></td>
+  <td><span class="status-badge status-unsafe">✗ Unsafe</span></td>
+  <td><div class="side-effects"><strong>Genotoxicity potential</strong> in multiple in vitro studies; <strong>tumour promotion</strong> in rodent studies at high doses; <strong>DNA damage</strong>; neurological effects including <strong>vision disturbances, tinnitus, nausea, delirium</strong> at acute high doses; <strong>immune disruption</strong> — recent 2021 EWG study linked TBHQ to immune impairment (COVID-19 vulnerability concern flagged). Not approved in Japan or EU.</div></td>
+  <td><div class="refs"><span>Gharavi N et al. Cell Biol Toxicol. 2007;23(5):389–400.</span><span>Environmental Working Group (EWG). TBHQ and immune function. 2021.</span><span>Ito N et al. Food Chem Toxicol. 1983;21(3):245–254.</span></div></td>
+</tr>
+
+<tr data-status="unsafe" data-text="320 bha butylated hydroxyanisole antioxidant">
+  <td><div class="ins-code">320</div></td>
+  <td><div class="additive-name">BHA (Butylated Hydroxyanisole)</div><div class="additive-compound">C₁₁H₁₆O₂ — Synthetic phenolic antioxidant</div><div class="additive-use">Antioxidant in fats, oils, snacks, cereals, chewing gum, meat products</div></td>
+  <td><span class="status-badge status-unsafe">✗ Unsafe</span></td>
+  <td><div class="side-effects"><strong>IARC Group 2B — possibly carcinogenic to humans</strong>; stomach tumours in rodents; <strong>endocrine disruption</strong> (oestrogenic and anti-androgenic activity); <strong>carcinogenic at high doses</strong> (forestomach tumours in rats); <strong>genotoxicity</strong>; allergic reactions. California Prop 65 listed. Banned in Japan for some uses. Concern about chronic low-dose accumulation.</div></td>
+  <td><div class="refs"><span>IARC Monograph Vol. 40 — BHA: Group 2B (1986)</span><span>Kahl R, Kappus H. Z Lebensm Unters Forsch. 1993;196(4):329–338.</span><span>California OEHHA — Prop 65 listing.</span></div></td>
+</tr>
+
+<tr data-status="caution" data-text="321 bht butylated hydroxytoluene antioxidant">
+  <td><div class="ins-code">321</div></td>
+  <td><div class="additive-name">BHT (Butylated Hydroxytoluene)</div><div class="additive-compound">C₁₅H₂₄O — Synthetic phenolic antioxidant</div><div class="additive-use">Antioxidant in fats, oils, cereals, snacks, chewing gum</div></td>
+  <td><span class="status-badge status-caution">⚠ Caution</span></td>
+  <td><div class="side-effects"><strong>Tumour promotion</strong> in animal studies (liver); <strong>thyroid effects</strong>; potential <strong>endocrine disruption</strong>; allergic reactions; some evidence of carcinogenicity (weaker than BHA); <strong>IARC Group 3</strong> (not classifiable); liver enzyme induction. Accumulates in adipose tissue.</div></td>
+  <td><div class="refs"><span>IARC Monograph Vol. 40 — BHT: Group 3 (1986)</span><span>Witschi H. Exp Lung Res. 1994;20(5):497–503.</span><span>EFSA ANS Panel. EFSA Journal. 2012;10(3):2588.</span></div></td>
+</tr>
+
+<tr data-status="safe" data-text="322 lecithin emulsifier antioxidant">
+  <td><div class="ins-code">322(i/ii)</div></td>
+  <td><div class="additive-name">Lecithin (Phosphatidylcholine)</div><div class="additive-compound">Phospholipid mixture from soy, sunflower, or egg yolk</div><div class="additive-use">Emulsifier and antioxidant; chocolate, margarine, baked goods, dairy</div></td>
+  <td><span class="status-badge status-safe">✓ Safe</span></td>
+  <td><div class="side-effects"><span class="safe-note">Generally recognized as safe.</span> High doses of supplemental lecithin/choline: may increase <strong>TMAO</strong> (trimethylamine N-oxide) — cardiovascular risk marker. Soy-derived: <strong>soy allergy risk</strong>. At food-use levels, considered safe for most individuals.</div></td>
+  <td><div class="refs"><span>JECFA — ADI "not specified"</span><span>Tang WH et al. NEJM. 2013;368(17):1575–1584. [TMAO]</span></div></td>
+</tr>
+
+<tr data-status="caution" data-text="385 386 calcium disodium edta sequestrant antioxidant">
+  <td><div class="ins-code">385 / 386</div></td>
+  <td><div class="additive-name">Calcium Disodium EDTA / Disodium EDTA</div><div class="additive-compound">C₁₄H₁₈CaN₂Na₂O₈ — Chelating agent (polyaminocarboxylic acid)</div><div class="additive-use">Sequestrant &amp; antioxidant; canned shellfish, margarine, salad dressings, mayo</div></td>
+  <td><span class="status-badge status-caution">⚠ Caution</span></td>
+  <td><div class="side-effects"><strong>Chelates essential minerals</strong> (zinc, iron, calcium, magnesium) — may interfere with absorption; GI irritation at high doses; <strong>mineral deficiency risk</strong> with chronic high consumption; reproductive toxicity concerns in animal studies at high doses.</div></td>
+  <td><div class="refs"><span>JECFA — ADI 0–1.9 mg/kg bw/day</span><span>Foreman JW. J Pediatr. 1998;123(3):S44–S48.</span></div></td>
+</tr>
+
+<tr data-status="safe" data-text="392 rosemary extract antioxidant natural">
+  <td><div class="ins-code">392</div></td>
+  <td><div class="additive-name">Rosemary Extract</div><div class="additive-compound">Carnosic acid, carnosol, rosmarinic acid — from <em>Rosmarinus officinalis</em></div><div class="additive-use">Natural antioxidant; fats, oils, meat, sausages, snack foods</div></td>
+  <td><span class="status-badge status-safe">✓ Safe</span></td>
+  <td><div class="side-effects"><span class="safe-note">Natural origin; generally safe.</span> Very high doses: potential drug interactions (anticoagulants, antihypertensives). Not of concern at food-additive use levels.</div></td>
+  <td><div class="refs"><span>EFSA ANS Panel — Rosemary extracts as food additives. EFSA Journal. 2008;6(6):721.</span></div></td>
+</tr>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- CATEGORY: ACIDITY REGULATORS (330–399) -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<tr class="cat-row"><td colspan="5"><div class="cat-row-label">Acidity Regulators — INS 296 to 399</div></td></tr>
+
+<tr data-status="safe" data-text="296 malic acid dl- acidity regulator">
+  <td><div class="ins-code">296</div></td>
+  <td><div class="additive-name">Malic Acid (DL-)</div><div class="additive-compound">C₄H₆O₅ — Dicarboxylic acid (apple acid)</div><div class="additive-use">Acidity regulator; beverages, confectionery, jams</div></td>
+  <td><span class="status-badge status-safe">✓ Safe</span></td>
+  <td><div class="side-effects"><span class="safe-note">Natural acid found in many fruits; safe.</span> Excess: GI discomfort, dental erosion from acidic foods. No carcinogenicity concerns.</div></td>
+  <td><div class="refs"><span>JECFA — ADI "not specified"</span></div></td>
+</tr>
+
+<tr data-status="safe" data-text="297 fumaric acid acidity regulator">
+  <td><div class="ins-code">297</div></td>
+  <td><div class="additive-name">Fumaric Acid</div><div class="additive-compound">C₄H₄O₄ — Trans-butenedioic acid</div><div class="additive-use">Acidity regulator; baked goods, powdered drinks, confectionery</div></td>
+  <td><span class="status-badge status-safe">✓ Safe</span></td>
+  <td><div class="side-effects"><span class="safe-note">Generally safe; natural metabolite in the Krebs cycle.</span> Large doses: potential kidney effects (rare). No confirmed toxicity at food use levels.</div></td>
+  <td><div class="refs"><span>JECFA — ADI 0–6 mg/kg bw/day</span></div></td>
+</tr>
+
+<tr data-status="safe" data-text="330 citric acid acidity regulator antioxidant sequestrant">
+  <td><div class="ins-code">330</div></td>
+  <td><div class="additive-name">Citric Acid</div><div class="additive-compound">C₆H₈O₇ — Tricarboxylic acid (Krebs cycle intermediate)</div><div class="additive-use">Acidity regulator, antioxidant, sequestrant; beverages, confectionery, dairy, canned goods</div></td>
+  <td><span class="status-badge status-safe">✓ Safe</span></td>
+  <td><div class="side-effects"><span class="safe-note">Natural component of citrus fruits; safe.</span> Frequent contact: <strong>dental erosion</strong>; GI discomfort in excess. No toxicity concerns at food-use levels.</div></td>
+  <td><div class="refs"><span>JECFA — ADI "not specified"</span></div></td>
+</tr>
+
+<tr data-status="safe" data-text="331 332 333 sodium potassium calcium citrates acidity regulator">
+  <td><div class="ins-code">331–333</div></td>
+  <td><div class="additive-name">Sodium, Potassium, Calcium Citrates</div><div class="additive-compound">Mineral salts of citric acid</div><div class="additive-use">Acidity regulator, emulsifying salt, sequestrant; processed cheese, dairy beverages, jams</div></td>
+  <td><span class="status-badge status-safe">✓ Safe</span></td>
+  <td><div class="side-effects"><span class="safe-note">Safe; contribute beneficial minerals.</span> Excess sodium citrate: contributes to sodium load (relevant in hypertension). No specific toxicity concerns.</div></td>
+  <td><div class="refs"><span>JECFA — ADI "not specified"</span></div></td>
+</tr>
+
+<tr data-status="safe" data-text="334 335 336 337 tartaric acid tartrates acidity regulator">
+  <td><div class="ins-code">334–337</div></td>
+  <td><div class="additive-name">Tartaric Acid &amp; Tartrates (Na / K / K-Na)</div><div class="additive-compound">C₄H₆O₆ — Dihydroxysuccinic acid (grape acid) &amp; salts</div><div class="additive-use">Acidity regulator; baked goods, confectionery, beverages, wine</div></td>
+  <td><span class="status-badge status-safe">✓ Safe</span></td>
+  <td><div class="side-effects"><span class="safe-note">Generally safe.</span> Very high intake: osmotic diarrhoea. Cream of tartar (potassium bitartrate) — laxative at very high doses. No confirmed carcinogenicity.</div></td>
+  <td><div class="refs"><span>JECFA — ADI 0–30 mg/kg bw/day</span></div></td>
+</tr>
+
+<tr data-status="caution" data-text="338 phosphoric acid acidity regulator antioxidant">
+  <td><div class="ins-code">338</div></td>
+  <td><div class="additive-name">Phosphoric Acid</div><div class="additive-compound">H₃PO₄ — Inorganic acid</div><div class="additive-use">Acidity regulator; cola beverages, dairy, processed foods</div></td>
+  <td><span class="status-badge status-caution">⚠ Caution</span></td>
+  <td><div class="side-effects"><strong>Dental erosion</strong> — highly acidic; <strong>disrupts calcium-phosphorus balance</strong> → linked to <strong>reduced bone density, osteoporosis</strong> risk with habitual cola consumption; <strong>kidney stone risk</strong> (urinary calcium loss); <strong>kidney disease</strong> association in epidemiological studies; interferes with iron absorption.</div></td>
+  <td><div class="refs"><span>Tucker KL et al. Am J Clin Nutr. 2006;84(4):936–942. [Bone density]</span><span>Manz F. Eur J Nutr. 2012;51(5):499–506.</span><span>Saldana TM et al. Epidemiology. 2007;18(4):501–506. [Kidney stones]</span></div></td>
+</tr>
+
+<tr data-status="caution" data-text="339 340 341 sodium potassium calcium phosphates acidity regulator emulsifier">
+  <td><div class="ins-code">339–341</div></td>
+  <td><div class="additive-name">Sodium / Potassium / Calcium Phosphates</div><div class="additive-compound">Mono-, di-, tri- phosphate salts of Na/K/Ca</div><div class="additive-use">Acidity regulator, emulsifier, raising agent; processed cheese, baked goods, meat products</div></td>
+  <td><span class="status-badge status-caution">⚠ Caution</span></td>
+  <td><div class="side-effects">Excessive phosphate intake: <strong>vascular calcification</strong>; <strong>impaired kidney function</strong> (FGF-23 elevation); disrupts <strong>calcium homeostasis</strong>; accelerates <strong>ageing biomarkers</strong> in animal studies. High inorganic phosphate consumption associated with increased <strong>cardiovascular mortality</strong> in epidemiological studies. Most concern in renal patients.</div></td>
+  <td><div class="refs"><span>Razzaque MS. Adv Chronic Kidney Dis. 2011;18(2):83–88.</span><span>Gutierrez OM et al. Kidney Int. 2010;78(11):1100–1106.</span><span>EFSA ANS Panel — Phosphates. EFSA Journal. 2019;17(6):5674.</span></div></td>
+</tr>
+
+<tr data-status="safe" data-text="355 356 357 adipic acid adipates acidity">
+  <td><div class="ins-code">355–357 / 359</div></td>
+  <td><div class="additive-name">Adipic Acid &amp; Adipates (Na / K / Ammonium)</div><div class="additive-compound">C₆H₁₀O₄ — Dicarboxylic acid</div><div class="additive-use">Acidity regulator; powdered desserts, baking powder, gelatin desserts</div></td>
+  <td><span class="status-badge status-safe">✓ Safe</span></td>
+  <td><div class="side-effects"><span class="safe-note">Generally safe at food use levels.</span> Very high intake may cause GI distress. No confirmed carcinogenicity.</div></td>
+  <td><div class="refs"><span>JECFA — ADI 0–5 mg/kg bw/day</span></div></td>
+</tr>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- CATEGORY: EMULSIFIERS / STABILIZERS / THICKENERS (400–495) -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<tr class="cat-row"><td colspan="5"><div class="cat-row-label">Emulsifiers, Stabilizers &amp; Thickeners — INS 400 to 495</div></td></tr>
+
+<tr data-status="safe" data-text="400 401 402 403 404 405 alginic acid alginates seaweed thickener emulsifier">
+  <td><div class="ins-code">400–405</div></td>
+  <td><div class="additive-name">Alginic Acid &amp; Alginates (Na / K / Ammonium / Ca / Propylene Glycol)</div><div class="additive-compound">Polysaccharide from brown seaweed (<em>Macrocystis</em> spp.)</div><div class="additive-use">Thickener, gelling agent, stabilizer; ice cream, dairy, bakery, salad dressings</div></td>
+  <td><span class="status-badge status-safe">✓ Safe</span></td>
+  <td><div class="side-effects"><span class="safe-note">Generally recognized as safe; dietary fibre.</span> High intake: GI bloating, flatulence. May inhibit mineral absorption at very high doses. No toxicity concerns at food-use levels.</div></td>
+  <td><div class="refs"><span>JECFA — ADI "not specified"</span></div></td>
+</tr>
+
+<tr data-status="safe" data-text="406 agar gelling stabilizer seaweed">
+  <td><div class="ins-code">406</div></td>
+  <td><div class="additive-name">Agar</div><div class="additive-compound">Polysaccharide from red algae (agarose + agaropectin)</div><div class="additive-use">Gelling agent; confectionery, dairy, processed foods, desserts, microbiological media</div></td>
+  <td><span class="status-badge status-safe">✓ Safe</span></td>
+  <td><div class="side-effects"><span class="safe-note">Generally safe; used medicinally as laxative.</span> Very large amounts: laxative effect, GI discomfort. No toxicity concerns.</div></td>
+  <td><div class="refs"><span>JECFA — ADI "not specified"</span></div></td>
+</tr>
+
+<tr data-status="caution" data-text="407 carrageenan thickener gelling stabilizer dairy inflammation">
+  <td><div class="ins-code">407 / 407a</div></td>
+  <td><div class="additive-name">Carrageenan / Processed Euchema Seaweed (PES)</div><div class="additive-compound">Sulphated polysaccharide from red seaweed (<em>Chondrus crispus</em>)</div><div class="additive-use">Thickener, gelling agent; infant formula, dairy, processed meats, sauces, ice cream</div></td>
+  <td><span class="status-badge status-unsafe">✗ Unsafe</span></td>
+  <td><div class="side-effects"><strong>Intestinal inflammation and ulceration</strong> in multiple animal studies; linked to <strong>inflammatory bowel disease (IBD)</strong> exacerbation; <strong>glucose intolerance / insulin resistance</strong> signals; <strong>colorectal cancer promotion</strong> in animal models. Degraded carrageenan (poligeenan) is a known carcinogen. The safety of food-grade carrageenan for infants is particularly contested. USDA banned from organic certification in 2018 (later reversed politically).</div></td>
+  <td><div class="refs"><span>Bhattacharyya S et al. Front Pediatr. 2012;6:7.</span><span>Tobacman JK. Environ Health Perspect. 2001;109(10):983–994.</span><span>David S et al. World J Gastroenterol. 2012;18(26):3417–3428.</span></div></td>
+</tr>
+
+<tr data-status="safe" data-text="410 carob bean gum locust bean gum thickener stabilizer">
+  <td><div class="ins-code">410</div></td>
+  <td><div class="additive-name">Carob Bean Gum (Locust Bean Gum)</div><div class="additive-compound">Galactomannan polysaccharide from <em>Ceratonia siliqua</em> seeds</div><div class="additive-use">Thickener, stabilizer; ice cream, infant formula, dairy, sauces</div></td>
+  <td><span class="status-badge status-safe">✓ Safe</span></td>
+  <td><div class="side-effects"><span class="safe-note">Generally safe.</span> Soluble fibre — may cause GI bloating at high doses. Benefits: helps manage blood glucose and cholesterol. No toxicity concerns.</div></td>
+  <td><div class="refs"><span>JECFA — ADI "not specified"</span></div></td>
+</tr>
+
+<tr data-status="safe" data-text="412 guar gum thickener stabilizer">
+  <td><div class="ins-code">412</div></td>
+  <td><div class="additive-name">Guar Gum</div><div class="additive-compound">Galactomannan from <em>Cyamopsis tetragonoloba</em> seeds</div><div class="additive-use">Thickener, stabilizer; baked goods, dairy, sauces, gluten-free foods</div></td>
+  <td><span class="status-badge status-safe">✓ Safe</span></td>
+  <td><div class="side-effects"><span class="safe-note">Generally safe; soluble dietary fibre.</span> High doses: GI bloating, cramping, nausea. Historically, very high doses (as weight-loss supplement) caused oesophageal/intestinal obstruction — not relevant to food-use amounts. May lower cholesterol (beneficial).</div></td>
+  <td><div class="refs"><span>JECFA — ADI "not specified"</span><span>Edwards CA. Br J Nutr. 1990;63(1):169–181.</span></div></td>
+</tr>
+
+<tr data-status="safe" data-text="413 tragacanth gum thickener emulsifier">
+  <td><div class="ins-code">413</div></td>
+  <td><div class="additive-name">Tragacanth Gum</div><div class="additive-compound">Polysaccharide exudate from <em>Astragalus</em> spp.</div><div class="additive-use">Thickener, emulsifier; salad dressings, confectionery, sauces</div></td>
+  <td><span class="status-badge status-caution">⚠ Caution</span></td>
+  <td><div class="side-effects">Rare: <strong>allergic reactions, occupational asthma</strong>; GI discomfort at high doses. Some carcinogenicity signals in old animal studies; more recent evaluation considers it safe at food-use levels.</div></td>
+  <td><div class="refs"><span>JECFA — ADI "not specified"</span><span>EFSA ANS Panel. EFSA Journal. 2017;15(8):4910.</span></div></td>
+</tr>
+
+<tr data-status="safe" data-text="414 gum arabic acacia gum thickener emulsifier">
+  <td><div class="ins-code">414</div></td>
+  <td><div class="additive-name">Gum Arabic (Acacia Gum)</div><div class="additive-compound">Polysaccharide &amp; glycoprotein from <em>Acacia senegal</em></div><div class="additive-use">Thickener, emulsifier, glazing agent; confectionery, beverages, snacks</div></td>
+  <td><span class="status-badge status-caution">⚠ Caution</span></td>
+  <td><div class="side-effects">Generally safe. Rare: <strong>IgE-mediated allergy</strong>, occupational asthma (printers, food workers); GI bloating in very high amounts. Considered prebiotic. ADI not specified but large amounts can cause osmotic diarrhoea.</div></td>
+  <td><div class="refs"><span>JECFA — ADI "not specified"</span><span>Nasir SMI et al. J Ethnopharmacol. 2018;228:107–118.</span></div></td>
+</tr>
+
+<tr data-status="safe" data-text="415 xanthan gum thickener stabilizer gluten free">
+  <td><div class="ins-code">415</div></td>
+  <td><div class="additive-name">Xanthan Gum</div><div class="additive-compound">Polysaccharide from <em>Xanthomonas campestris</em> fermentation</div><div class="additive-use">Thickener, stabilizer; gluten-free products, sauces, dairy, dressings</div></td>
+  <td><span class="status-badge status-safe">✓ Safe</span></td>
+  <td><div class="side-effects"><span class="safe-note">Generally safe.</span> May cause <strong>bloating, flatulence, loose stools</strong> at high doses; some individuals with soy/corn/wheat sensitivity may react (substrate of fermentation). Potential prebiotic effects.</div></td>
+  <td><div class="refs"><span>JECFA — ADI "not specified"</span></div></td>
+</tr>
+
+<tr data-status="safe" data-text="418 gellan gum thickener stabilizer">
+  <td><div class="ins-code">418</div></td>
+  <td><div class="additive-name">Gellan Gum</div><div class="additive-compound">Tetrasaccharide repeat polysaccharide from <em>Sphingomonas elodea</em></div><div class="additive-use">Gelling agent, stabilizer; confectionery, beverages, dairy</div></td>
+  <td><span class="status-badge status-safe">✓ Safe</span></td>
+  <td><div class="side-effects"><span class="safe-note">Generally recognized as safe.</span> Minor GI effects at very high doses. No confirmed toxicity. ADI established as "not specified."</div></td>
+  <td><div class="refs"><span>JECFA — ADI "not specified" (1990)</span></div></td>
+</tr>
+
+<tr data-status="safe" data-text="420 sorbitol polyol sweetener humectant">
+  <td><div class="ins-code">420(i/ii)</div></td>
+  <td><div class="additive-name">Sorbitol / Sorbitol Syrup</div><div class="additive-compound">C₆H₁₄O₆ — Sugar alcohol (reduced form of glucose)</div><div class="additive-use">Sweetener, humectant, bulking agent; sugar-free confectionery, baked goods, chewing gum</div></td>
+  <td><span class="status-badge status-caution">⚠ Caution</span></td>
+  <td><div class="side-effects">Above 10–20 g/day: <strong>osmotic diarrhoea, laxative effect, abdominal cramping</strong>; particularly problematic in IBS sufferers (FODMAP); <strong>not safe for infants and toddlers</strong> in large amounts. At moderate food-use levels generally tolerable in adults.</div></td>
+  <td><div class="refs"><span>Hyams JS. J Pediatr. 1983;103(2):241–244.</span><span>JECFA — ADI "not specified" but laxative threshold noted</span></div></td>
+</tr>
+
+<tr data-status="safe" data-text="421 mannitol anticaking bulking sweetener">
+  <td><div class="ins-code">421</div></td>
+  <td><div class="additive-name">Mannitol</div><div class="additive-compound">C₆H₁₄O₆ — Sugar alcohol (hexose polyol)</div><div class="additive-use">Anticaking, bulking, sweetener; sugar-free confectionery, pharmaceuticals</div></td>
+  <td><span class="status-badge status-caution">⚠ Caution</span></td>
+  <td><div class="side-effects">Poorly absorbed: <strong>osmotic diarrhoea, bloating, flatulence</strong> above ~20 g/day; FODMAP — problematic in IBS; <strong>laxative effect</strong>.</div></td>
+  <td><div class="refs"><span>JECFA — ADI "not specified"</span></div></td>
+</tr>
+
+<tr data-status="safe" data-text="422 glycerol humectant thickener">
+  <td><div class="ins-code">422</div></td>
+  <td><div class="additive-name">Glycerol (Glycerine)</div><div class="additive-compound">C₃H₈O₃ — Trihydroxy alcohol</div><div class="additive-use">Humectant, solvent; confectionery, baked goods, beverages</div></td>
+  <td><span class="status-badge status-safe">✓ Safe</span></td>
+  <td><div class="side-effects"><span class="safe-note">Natural metabolic product; safe.</span> Very high doses: headache, thirst (osmotic). No toxicity concerns at food-use levels.</div></td>
+  <td><div class="refs"><span>JECFA — ADI "not specified"</span></div></td>
+</tr>
+
+<tr data-status="safe" data-text="440 pectin thickener gelling emulsifier">
+  <td><div class="ins-code">440</div></td>
+  <td><div class="additive-name">Pectins</div><div class="additive-compound">Polysaccharide (galacturonic acid polymer) from citrus peel / apple</div><div class="additive-use">Gelling agent, thickener; jams, jellies, beverages, dairy, confectionery</div></td>
+  <td><span class="status-badge status-safe">✓ Safe</span></td>
+  <td><div class="side-effects"><span class="safe-note">Natural dietary fibre; health benefits (cholesterol reduction, glycaemic control).</span> High intake: GI bloating. No toxicity concerns. Generally beneficial.</div></td>
+  <td><div class="refs"><span>JECFA — ADI "not specified"</span><span>Sriamornsak P. Silpakorn Univ Int J. 2003;3(1–2):206–228.</span></div></td>
+</tr>
+
+<tr data-status="caution" data-text="443 brominated vegetable oil bvo emulsifier stabilizer citrus">
+  <td><div class="ins-code">443</div></td>
+  <td><div class="additive-name">Brominated Vegetable Oil (BVO)</div><div class="additive-compound">Vegetable oil with bromine atoms — density agent</div><div class="additive-use">Emulsifier/stabilizer; citrus-flavoured beverages (keeps flavours suspended)</div></td>
+  <td><span class="status-badge status-unsafe">✗ Unsafe</span></td>
+  <td><div class="side-effects"><strong>Bioaccumulates in body fat and thyroid</strong>; <strong>FDA revoked authorization July 2024</strong> due to safety concerns; animal studies: <strong>thyroid dysfunction, neurological effects, cardiac damage</strong>; bromine accumulation linked to <strong>memory impairment, skin problems</strong>; banned in EU, Japan, India (limited). Historical cases of human toxicity (memory loss, headache) from excessive consumption of BVO-containing drinks.</div></td>
+  <td><div class="refs"><span>US FDA — Final Rule revoking BVO authorization. Federal Register. July 2024.</span><span>LeVine SM. Food Chem Toxicol. 1988;26(2):105–110.</span><span>Lunder S. EWG — Brominated Vegetable Oil. 2013.</span></div></td>
+</tr>
+
+<tr data-status="safe" data-text="450 451 452 diphosphates triphosphates polyphosphates emulsifier sequestrant">
+  <td><div class="ins-code">450–452</div></td>
+  <td><div class="additive-name">Di-, Tri-, Polyphosphates (Na/K/Ca/Mg/Ammonium)</div><div class="additive-compound">Sodium pyrophosphate, tripolyphosphate, hexametaphosphate</div><div class="additive-use">Emulsifying salt, sequestrant, raising agent; processed meat, poultry, seafood, processed cheese, sausages</div></td>
+  <td><span class="status-badge status-caution">⚠ Caution</span></td>
+  <td><div class="side-effects">Similar to INS 338–341: contributes to <strong>high phosphate intake</strong>; <strong>kidney damage</strong> risk (elevated FGF-23); <strong>vascular calcification</strong>; <strong>cardiovascular mortality</strong> association; disrupts calcium balance. Particularly risky for patients with chronic kidney disease (CKD).</div></td>
+  <td><div class="refs"><span>Razzaque MS. Adv Chronic Kidney Dis. 2011;18(2):83–88.</span><span>EFSA ANS Panel — Phosphates re-evaluation. EFSA Journal. 2019;17(6):5674.</span></div></td>
+</tr>
+
+<tr data-status="safe" data-text="460 cellulose microcrystalline powdered anticaking emulsifier">
+  <td><div class="ins-code">460(i/ii)</div></td>
+  <td><div class="additive-name">Microcrystalline Cellulose / Powdered Cellulose</div><div class="additive-compound">Cellulose (β-1,4-glucan polymer) — purified plant cell wall material</div><div class="additive-use">Anticaking, bulking, emulsifier; shredded cheese, powdered beverages, tablets</div></td>
+  <td><span class="status-badge status-safe">✓ Safe</span></td>
+  <td><div class="side-effects"><span class="safe-note">Indigestible dietary fibre; safe.</span> No known adverse effects at food-use levels. High intake: mild GI effects (laxative).</div></td>
+  <td><div class="refs"><span>JECFA — ADI "not specified"</span></div></td>
+</tr>
+
+<tr data-status="safe" data-text="461 462 463 464 465 466 methyl ethyl hydroxypropyl carboxymethyl cellulose thickener">
+  <td><div class="ins-code">461–469</div></td>
+  <td><div class="additive-name">Modified Celluloses (Methyl / Ethyl / Hydroxypropyl / HPMC / CMC / etc.)</div><div class="additive-compound">Semi-synthetic cellulose ethers</div><div class="additive-use">Thickener, emulsifier, coating agent; baked goods, dairy, sauces, ice cream, gluten-free foods</div></td>
+  <td><span class="status-badge status-safe">✓ Safe</span></td>
+  <td><div class="side-effects"><span class="safe-note">Generally safe; not absorbed.</span> High amounts of CMC (466): recent research shows potential <strong>gut microbiome disruption</strong> and promotion of <strong>intestinal inflammation</strong> in animal studies (Chassaing et al. 2015 — mouse/human microbiome data). More human research needed.</div></td>
+  <td><div class="refs"><span>Chassaing B et al. Nature. 2015;519(7541):92–96. [CMC microbiome]</span><span>JECFA — ADI "not specified" (most)</span></div></td>
+</tr>
+
+<tr data-status="safe" data-text="471 mono di glycerides fatty acids emulsifier">
+  <td><div class="ins-code">471</div></td>
+  <td><div class="additive-name">Mono- and Di-glycerides of Fatty Acids</div><div class="additive-compound">Partial esters of glycerol with edible fatty acids</div><div class="additive-use">Emulsifier; bread, margarine, ice cream, dairy, baked goods, confectionery</div></td>
+  <td><span class="status-badge status-caution">⚠ Caution</span></td>
+  <td><div class="side-effects">Generally considered safe by JECFA. However, may contain <strong>trans fats</strong> depending on manufacturing (partially hydrogenated oil derivative); products may introduce hidden <strong>trans fatty acid intake</strong> — linked to cardiovascular disease. Metabolized same as dietary fat.</div></td>
+  <td><div class="refs"><span>JECFA — ADI "not specified"</span><span>Mozaffarian D et al. NEJM. 2006;354(15):1601–1613. [Trans fats CVD]</span></div></td>
+</tr>
+
+<tr data-status="safe" data-text="472a 472b 472c 472d 472e acetic lactic citric tartaric diacetyl fatty acid esters glycerol emulsifier">
+  <td><div class="ins-code">472a–472g</div></td>
+  <td><div class="additive-name">Acetic / Lactic / Citric / Tartaric / Diacetyltartaric Fatty Acid Esters of Glycerol (ACETEM / LACTEM / CITREM / DATEM)</div><div class="additive-compound">Mixed ester emulsifiers from fatty acids + glycerol + organic acids</div><div class="additive-use">Emulsifiers; bread dough, cakes, margarine, whipped toppings</div></td>
+  <td><span class="status-badge status-safe">✓ Safe</span></td>
+  <td><div class="side-effects"><span class="safe-note">Generally safe; metabolized normally.</span> Minor GI effects at very high consumption. Some may carry trans fatty acid concerns if derived from partially hydrogenated oils.</div></td>
+  <td><div class="refs"><span>JECFA — ADI "not specified" (most variants)</span></div></td>
+</tr>
+
+<tr data-status="safe" data-text="473 474 sucrose esters sucroglycerides emulsifier">
+  <td><div class="ins-code">473 / 474</div></td>
+  <td><div class="additive-name">Sucrose Esters of Fatty Acids / Sucroglycerides</div><div class="additive-compound">Esters of sucrose with fatty acids</div><div class="additive-use">Emulsifier; dairy beverages, baked goods, confectionery, margarine</div></td>
+  <td><span class="status-badge status-safe">✓ Safe</span></td>
+  <td><div class="side-effects"><span class="safe-note">Safe at food use levels.</span> High intake: mild diarrhoea (poorly absorbed). Hydrolyzed to sucrose and fatty acids in gut.</div></td>
+  <td><div class="refs"><span>JECFA — ADI 0–30 mg/kg bw/day (473)</span></div></td>
+</tr>
+
+<tr data-status="safe" data-text="475 476 polyglycerol esters fatty acids emulsifier">
+  <td><div class="ins-code">475 / 476</div></td>
+  <td><div class="additive-name">Polyglycerol Esters of Fatty Acids / Polyglycerol Polyricinoleate (PGPR)</div><div class="additive-compound">Esters of polyglycerol with fatty acids (including ricinoleic from castor oil)</div><div class="additive-use">Emulsifier; chocolate (viscosity reduction), margarine, salad dressings</div></td>
+  <td><span class="status-badge status-safe">✓ Safe</span></td>
+  <td><div class="side-effects"><span class="safe-note">Generally safe.</span> Used to reduce cocoa butter content in chocolate — primarily an ethical/quality concern (chocolate dilution), not a health one. No confirmed toxicity at food-use levels.</div></td>
+  <td><div class="refs"><span>JECFA — ADI 0–25 mg/kg bw/day (476)</span></div></td>
+</tr>
+
+<tr data-status="safe" data-text="481 482 sodium calcium stearoyl lactylate emulsifier dough">
+  <td><div class="ins-code">481 / 482</div></td>
+  <td><div class="additive-name">Sodium / Calcium Stearoyl Lactylate (SSL / CSL)</div><div class="additive-compound">Ester of stearic acid and lactic acid — sodium/calcium salts</div><div class="additive-use">Dough conditioner, emulsifier; bread, biscuits, confectionery, coffee whiteners</div></td>
+  <td><span class="status-badge status-safe">✓ Safe</span></td>
+  <td><div class="side-effects"><span class="safe-note">Generally safe.</span> Minor GI effects at very high doses. No confirmed carcinogenicity or genotoxicity. However, manufacturing may introduce small amounts of <strong>dioxin-like compounds</strong> if lactic acid is derived from contaminated sources (rare, regulated).</div></td>
+  <td><div class="refs"><span>JECFA — ADI 0–20 mg/kg bw/day</span></div></td>
+</tr>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- CATEGORY: MINERAL SALTS / MISC ACIDITY REGULATORS (500–580) -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<tr class="cat-row"><td colspan="5"><div class="cat-row-label">Mineral Salts, Anticaking &amp; Misc — INS 500 to 586</div></td></tr>
+
+<tr data-status="safe" data-text="500 501 503 504 sodium potassium ammonium magnesium carbonate leavening raising agent">
+  <td><div class="ins-code">500–504</div></td>
+  <td><div class="additive-name">Carbonates — Sodium (i/ii) / Potassium (i/ii) / Ammonium (i/ii) / Magnesium</div><div class="additive-compound">Na₂CO₃, K₂CO₃, (NH₄)₂CO₃, MgCO₃ — Alkaline mineral salts</div><div class="additive-use">Acidity regulator, raising agent, anticaking; baked goods, cocoa powder, confectionery</div></td>
+  <td><span class="status-badge status-safe">✓ Safe</span></td>
+  <td><div class="side-effects"><span class="safe-note">Generally safe at food use levels.</span> Excess sodium carbonate: contributes to high sodium intake (hypertension); ammonium salts at very high doses: ammoniacal effects. Minor GI effects. No significant toxicity.</div></td>
+  <td><div class="refs"><span>JECFA — ADI "not specified" (most)</span></div></td>
+</tr>
+
+<tr data-status="safe" data-text="507 hydrochloric acid acidity regulator">
+  <td><div class="ins-code">507</div></td>
+  <td><div class="additive-name">Hydrochloric Acid</div><div class="additive-compound">HCl — Inorganic acid (natural gastric acid)</div><div class="additive-use">Acidity regulator; flavour, pH adjustment in food processing</div></td>
+  <td><span class="status-badge status-safe">✓ Safe</span></td>
+  <td><div class="side-effects"><span class="safe-note">Natural component of gastric juice; safe when properly diluted in food.</span> Concentrated form: caustic. At food-use levels fully neutralized during processing. No concerns for consumers.</div></td>
+  <td><div class="refs"><span>JECFA — ADI "not specified"</span></div></td>
+</tr>
+
+<tr data-status="safe" data-text="508 509 potassium calcium chloride mineral salt">
+  <td><div class="ins-code">508 / 509</div></td>
+  <td><div class="additive-name">Potassium Chloride / Calcium Chloride</div><div class="additive-compound">KCl / CaCl₂ — Inorganic mineral salts</div><div class="additive-use">Gelling agent, firming agent, salt substitute; low-sodium products, cheese, pickles, tofu</div></td>
+  <td><span class="status-badge status-safe">✓ Safe</span></td>
+  <td><div class="side-effects"><span class="safe-note">Generally safe.</span> Potassium chloride in excess: <strong>hyperkalemia risk</strong> in patients with kidney disease; bitter metallic taste at high concentrations. Calcium chloride: GI discomfort at high doses.</div></td>
+  <td><div class="refs"><span>JECFA — ADI "not specified"</span></div></td>
+</tr>
+
+<tr data-status="safe" data-text="511 512 magnesium ferrous chloride mineral">
+  <td><div class="ins-code">511 / 512</div></td>
+  <td><div class="additive-name">Magnesium Chloride / Stannous Chloride</div><div class="additive-compound">MgCl₂ / SnCl₂</div><div class="additive-use">Firming agent, colour retention (stannous); tofu (MgCl₂), canned vegetables (SnCl₂)</div></td>
+  <td><span class="status-badge status-safe">✓ Safe</span></td>
+  <td><div class="side-effects"><span class="safe-note">MgCl₂: safe; essential mineral supplement effect.</span> Stannous chloride (SnCl₂): tin accumulation at very high dietary intake — GI irritation. Regulatory limits protect against this. No confirmed carcinogenicity.</div></td>
+  <td><div class="refs"><span>JECFA — ADI 0–2 mg/kg bw/day (stannous chloride)</span></div></td>
+</tr>
+
+<tr data-status="caution" data-text="516 calcium sulphate mineral salt firming">
+  <td><div class="ins-code">516</div></td>
+  <td><div class="additive-name">Calcium Sulphate (Gypsum)</div><div class="additive-compound">CaSO₄ — Inorganic mineral salt</div><div class="additive-use">Firming agent, sequestrant; tofu (solidifier), bread, flour, beer</div></td>
+  <td><span class="status-badge status-safe">✓ Safe</span></td>
+  <td><div class="side-effects"><span class="safe-note">Generally safe; calcium supplement effect beneficial.</span> Large doses: GI effects, possible kidney stones in susceptible individuals. Industrial grade (not food grade) contains impurities — food grade is safe.</div></td>
+  <td><div class="refs"><span>JECFA — ADI "not specified"</span></div></td>
+</tr>
+
+<tr data-status="safe" data-text="524 sodium hydroxide caustic soda acidity regulator">
+  <td><div class="ins-code">524</div></td>
+  <td><div class="additive-name">Sodium Hydroxide (Caustic Soda)</div><div class="additive-compound">NaOH — Strong inorganic base</div><div class="additive-use">Acidity regulator, pH adjustment; olives, pretzels (lye treatment), cocoa, caramel</div></td>
+  <td><span class="status-badge status-safe">✓ Safe</span></td>
+  <td><div class="side-effects"><span class="safe-note">Safe when properly neutralized in processed food.</span> Residues fully neutralized before consumption in properly manufactured products. Pure NaOH is extremely caustic — food-use regulatory controls prevent consumer exposure to harmful concentrations.</div></td>
+  <td><div class="refs"><span>JECFA — ADI "not specified"</span></div></td>
+</tr>
+
+<tr data-status="safe" data-text="526 calcium hydroxide firming agent lime">
+  <td><div class="ins-code">526</div></td>
+  <td><div class="additive-name">Calcium Hydroxide (Slaked Lime)</div><div class="additive-compound">Ca(OH)₂ — Inorganic alkaline compound</div><div class="additive-use">Firming agent; tortillas (nixtamalisation), pickles, pH adjustment</div></td>
+  <td><span class="status-badge status-safe">✓ Safe</span></td>
+  <td><div class="side-effects"><span class="safe-note">Safe at food use levels; contributes bioavailable calcium.</span> In nixtamalization — improves niacin availability. Excess: alkaline digestive upset.</div></td>
+  <td><div class="refs"><span>JECFA — ADI "not specified"</span></div></td>
+</tr>
+
+<tr data-status="safe" data-text="535 536 540 541 sodium potassium calcium ferrocyanide anticaking salt">
+  <td><div class="ins-code">535 / 536 / 540 / 541</div></td>
+  <td><div class="additive-name">Sodium / Potassium Ferrocyanide / Calcium &amp; Sodium Aluminium Phosphates</div><div class="additive-compound">Na₄Fe(CN)₆ / K₄Fe(CN)₆ / SALP</div><div class="additive-use">Anticaking in table salt; raising agent (SALP) in baked goods</div></td>
+  <td><span class="status-badge status-caution">⚠ Caution</span></td>
+  <td><div class="side-effects">Ferrocyanides: <strong>aluminium content</strong> concern (see 173); ferrocyanide itself non-toxic (different from free cyanide); at extreme conditions (very acidic) could theoretically release cyanide — considered a non-issue at regulatory use levels. SALP introduces aluminium — concern for accumulation (neurotoxicity, Alzheimer's links).</div></td>
+  <td><div class="refs"><span>EFSA ANS Panel — Aluminium in food. EFSA Journal. 2011;9(7):2295.</span><span>WHO Food Additives Series 40 — Ferrocyanide (1998).</span></div></td>
+</tr>
+
+<tr data-status="safe" data-text="551 552 553 silicon dioxide calcium silicate magnesium silicate anticaking">
+  <td><div class="ins-code">551–553</div></td>
+  <td><div class="additive-name">Silicon Dioxide / Calcium Silicate / Magnesium Silicate (Talc)</div><div class="additive-compound">SiO₂ / CaSiO₃ / Mg₂Si₃O₈ — Inorganic silicates</div><div class="additive-use">Anticaking agent; powdered foods, salt, sugar, spices, powdered milk</div></td>
+  <td><span class="status-badge status-caution">⚠ Caution</span></td>
+  <td><div class="side-effects">Amorphous SiO₂ (food grade): generally considered safe. Crystalline silica (NOT food grade): <strong>silicosis, lung cancer (IARC Group 1 — inhalation)</strong>. Food-grade is amorphous; concern is nanoparticles (see also TiO₂ nanoparticle parallel). Talc (553): linked to <strong>ovarian cancer</strong> in some studies (perineal use); food grade use has different exposure route — less concern but worth monitoring.</div></td>
+  <td><div class="refs"><span>IARC — Crystalline silica: Group 1 (inhalation). Vol. 68, 1997.</span><span>EFSA ANS Panel — Silicon dioxide. EFSA Journal. 2018;16(1):5088.</span></div></td>
+</tr>
+
+<tr data-status="safe" data-text="570 fatty acids stearic palmitic anticaking glazing">
+  <td><div class="ins-code">570</div></td>
+  <td><div class="additive-name">Fatty Acids (Stearic, Palmitic, etc.)</div><div class="additive-compound">Long-chain carboxylic acids (C12–C22)</div><div class="additive-use">Anticaking, glazing; confectionery, gum, dietary supplements</div></td>
+  <td><span class="status-badge status-safe">✓ Safe</span></td>
+  <td><div class="side-effects"><span class="safe-note">Normal dietary fatty acids; safe.</span> Excessive saturated fat intake linked to cardiovascular disease — relevant to diet overall, not to additive use at food-grade trace amounts.</div></td>
+  <td><div class="refs"><span>JECFA — ADI "not specified"</span></div></td>
+</tr>
+
+<tr data-status="safe" data-text="575 glucono delta lactone acidity regulator raising">
+  <td><div class="ins-code">575</div></td>
+  <td><div class="additive-name">Glucono Delta-Lactone (GDL)</div><div class="additive-compound">C₆H₁₀O₆ — Cyclic ester of gluconic acid</div><div class="additive-use">Acidity regulator, raising agent, coagulant; tofu, dairy, baked goods</div></td>
+  <td><span class="status-badge status-safe">✓ Safe</span></td>
+  <td><div class="side-effects"><span class="safe-note">Natural metabolite; safe.</span> Hydrolyzed to gluconic acid in body. No confirmed adverse effects at food-use levels.</div></td>
+  <td><div class="refs"><span>JECFA — ADI "not specified"</span></div></td>
+</tr>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- CATEGORY: FLAVOUR ENHANCERS (620–650) -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<tr class="cat-row"><td colspan="5"><div class="cat-row-label">Flavour Enhancers — INS 620 to 650</div></td></tr>
+
+<tr data-status="caution" data-text="620 621 622 623 624 625 glutamic acid msg monosodium glutamate flavour enhancer umami">
+  <td><div class="ins-code">620–625</div></td>
+  <td><div class="additive-name">Glutamic Acid &amp; Glutamates (Monosodium / Monopotassium / Calcium / Monoammonium / Magnesium)</div><div class="additive-compound">HOOC-CH(NH₂)-CH₂-CH₂-COOH — Amino acid &amp; its mineral salts (MSG most common)</div><div class="additive-use">Flavour enhancer (umami); soups, sauces, snacks, seasoning, processed foods</div></td>
+  <td><span class="status-badge status-caution">⚠ Caution</span></td>
+  <td><div class="side-effects"><strong>"Chinese Restaurant Syndrome" (CRS)</strong> — flushing, headache, sweating, chest tightness — debated but seen in double-blind studies at doses >3g; <strong>excitotoxicity concern</strong> (glutamate as excitatory neurotransmitter at very high doses); <strong>obesity promotion</strong> — some epidemiological evidence linking habitual MSG consumption to weight gain; <strong>asthma triggers</strong> in susceptible individuals. Generally considered safe at regulated doses; GRAS in USA, but individual sensitivity is real.</div></td>
+  <td><div class="refs"><span>Geha RS et al. J Allergy Clin Immunol. 2000;106(5):973–980.</span><span>He K et al. Obesity. 2008;16(8):1875–1880. [MSG and obesity]</span><span>JECFA — ADI "not specified" but subject of ongoing debate</span></div></td>
+</tr>
+
+<tr data-status="safe" data-text="626 627 628 629 guanylic acid disodium guanylate flavour enhancer nucleotide">
+  <td><div class="ins-code">626–629</div></td>
+  <td><div class="additive-name">Guanylic Acid &amp; Guanylates (Di-Na / Di-K / Ca)</div><div class="additive-compound">GMP (guanosine 5'-monophosphate) — Nucleotide (purine)</div><div class="additive-use">Flavour enhancer (synergistic with MSG); soups, sauces, snacks, meat products</div></td>
+  <td><span class="status-badge status-caution">⚠ Caution</span></td>
+  <td><div class="side-effects"><strong>Contraindicated in gout</strong> — metabolized to <strong>uric acid</strong>, can precipitate <strong>gout attacks</strong>; not suitable for infants; should be avoided by people with hyperuricemia. Safe for healthy individuals at dietary levels.</div></td>
+  <td><div class="refs"><span>JECFA — ADI "not specified" (with caveat)</span><span>Zhu Y et al. Arthritis Care Res. 2012;64(2):222–229. [Purines and gout]</span></div></td>
+</tr>
+
+<tr data-status="caution" data-text="630 631 632 633 inosinic acid disodium inosinate flavour enhancer nucleotide">
+  <td><div class="ins-code">630–633</div></td>
+  <td><div class="additive-name">Inosinic Acid &amp; Inosinates (Di-Na / Di-K / Ca)</div><div class="additive-compound">IMP (inosine 5'-monophosphate) — Nucleotide (purine)</div><div class="additive-use">Flavour enhancer (synergistic with MSG and guanylates); snacks, seasoning, soups, processed meat</div></td>
+  <td><span class="status-badge status-caution">⚠ Caution</span></td>
+  <td><div class="side-effects">Same as guanylates: <strong>contraindicated in gout</strong> (uric acid precursor); <strong>not suitable for infants and children under 12 weeks</strong>; not suitable for people with hyperuricemia or asthma.</div></td>
+  <td><div class="refs"><span>JECFA — ADI "not specified"</span><span>Zhu Y et al. Arthritis Care Res. 2012;64(2):222–229.</span></div></td>
+</tr>
+
+<tr data-status="safe" data-text="635 disodium 5 ribonucleotides flavour enhancer">
+  <td><div class="ins-code">635</div></td>
+  <td><div class="additive-name">Disodium 5'-Ribonucleotides</div><div class="additive-compound">Mixture of disodium guanylate (627) and disodium inosinate (631)</div><div class="additive-use">Flavour enhancer; instant noodles, soups, snacks, seasoning mixes</div></td>
+  <td><span class="status-badge status-caution">⚠ Caution</span></td>
+  <td><div class="side-effects">Same gout/hyperuricemia concern as 627 and 631 individually. Can cause <strong>delayed hypersensitivity reactions</strong> including itching and hives in some individuals (particularly noted in Australia). Not for infants.</div></td>
+  <td><div class="refs"><span>JECFA — ADI "not specified"</span></div></td>
+</tr>
+
+<tr data-status="safe" data-text="640 glycine flavour modifier amino acid">
+  <td><div class="ins-code">640</div></td>
+  <td><div class="additive-name">Glycine</div><div class="additive-compound">H₂NCH₂COOH — Simplest amino acid</div><div class="additive-use">Flavour modifier, sweetener; confectionery, beverages, seasoning</div></td>
+  <td><span class="status-badge status-safe">✓ Safe</span></td>
+  <td><div class="side-effects"><span class="safe-note">Essential amino acid; safe at food use levels.</span> Very high doses (supplements): mild sedative effects, drowsiness. No toxicity at food-use amounts.</div></td>
+  <td><div class="refs"><span>JECFA — ADI "not specified"</span></div></td>
+</tr>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- CATEGORY: GLAZING AGENTS (900–906) -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<tr class="cat-row"><td colspan="5"><div class="cat-row-label">Glazing Agents — INS 901 to 915</div></td></tr>
+
+<tr data-status="safe" data-text="901 beeswax white yellow glazing coating">
+  <td><div class="ins-code">901</div></td>
+  <td><div class="additive-name">Beeswax (White and Yellow)</div><div class="additive-compound">Esters of long-chain fatty acids and alcohols from honeybees</div><div class="additive-use">Glazing agent; confectionery, fruits, pharmaceuticals</div></td>
+  <td><span class="status-badge status-safe">✓ Safe</span></td>
+  <td><div class="side-effects"><span class="safe-note">Natural origin; very safe.</span> Rare: bee-product allergies in hypersensitive individuals. Not suitable for vegans (animal origin). No toxicity.</div></td>
+  <td><div class="refs"><span>JECFA — ADI "not specified"</span></div></td>
+</tr>
+
+<tr data-status="safe" data-text="903 carnauba wax glazing vegan confectionery">
+  <td><div class="ins-code">903</div></td>
+  <td><div class="additive-name">Carnauba Wax</div><div class="additive-compound">Long-chain ester wax from <em>Copernicia prunifera</em> palm leaves</div><div class="additive-use">Glazing, coating; confectionery, chewing gum, pharmaceutical tablets, apple coating</div></td>
+  <td><span class="status-badge status-safe">✓ Safe</span></td>
+  <td><div class="side-effects"><span class="safe-note">Plant-based; very safe.</span> Not metabolized. No confirmed adverse effects. Some concern about nanoparticle formation during chewing gum processing (emerging research).</div></td>
+  <td><div class="refs"><span>JECFA — ADI 0–7 mg/kg bw/day</span></div></td>
+</tr>
+
+<tr data-status="safe" data-text="904 shellac glazing confectionery tablets">
+  <td><div class="ins-code">904</div></td>
+  <td><div class="additive-name">Shellac</div><div class="additive-compound">Resinous secretion from lac insect <em>Kerria lacca</em></div><div class="additive-use">Glazing agent; confectionery, fresh citrus fruit coatings, pharmaceutical tablets</div></td>
+  <td><span class="status-badge status-safe">✓ Safe</span></td>
+  <td><div class="side-effects"><span class="safe-note">Very low exposure via food; generally safe.</span> Not suitable for vegans. Rare: contact allergy. Insoluble in water; passes through GI tract mostly unabsorbed.</div></td>
+  <td><div class="refs"><span>JECFA — ADI "not specified"</span></div></td>
+</tr>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- CATEGORY: FLOUR TREATMENT AGENTS (920–930) -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<tr class="cat-row"><td colspan="5"><div class="cat-row-label">Flour Treatment Agents — INS 920 to 930</div></td></tr>
+
+<tr data-status="safe" data-text="920 l-cysteine cystine flour treatment dough conditioner">
+  <td><div class="ins-code">920 / 921</div></td>
+  <td><div class="additive-name">L-Cysteine &amp; L-Cystine (and their HCl salts)</div><div class="additive-compound">C₃H₇NO₂S — Sulphur-containing amino acids</div><div class="additive-use">Flour treatment, dough conditioner; bread, biscuits, crackers</div></td>
+  <td><span class="status-badge status-safe">✓ Safe</span></td>
+  <td><div class="side-effects"><span class="safe-note">Natural amino acids; safe at food use levels.</span> Historically derived from human hair or feathers (note for strict vegetarians/vegans). Fermentation-derived now available. No health concerns.</div></td>
+  <td><div class="refs"><span>JECFA — ADI "not specified"</span></div></td>
+</tr>
+
+<tr data-status="unsafe" data-text="924a 924b potassium bromate calcium bromate flour treatment banned">
+  <td><div class="ins-code">924a / 924b</div></td>
+  <td><div class="additive-name">Potassium Bromate / Calcium Bromate</div><div class="additive-compound">KBrO₃ / Ca(BrO₃)₂ — Oxidizing agents</div><div class="additive-use">Flour improver, oxidizing agent; bread, baked goods — still allowed in India</div></td>
+  <td><span class="status-badge status-unsafe">✗ Unsafe</span></td>
+  <td><div class="side-effects"><strong>IARC Group 2B — possibly carcinogenic to humans</strong>; causes <strong>renal tumours and thyroid cancer</strong> in animal studies; <strong>banned in EU, UK, Canada, Brazil, Australia, China, and WHO recommendations</strong> against use; DNA damage in in vitro studies; toxic to kidneys; causes <strong>nephrotoxicity</strong>. When bread is fully baked, bromate converts to bromide (less harmful) but conversion may be incomplete. India's FSSAI allows it — this is considered a significant regulatory gap by public health experts.</div></td>
+  <td><div class="refs"><span>IARC Monograph Vol. 73 — Potassium bromate: Group 2B (1999)</span><span>DeAngelo AB et al. J Natl Cancer Inst. 1998;90(5):398–400.</span><span>Kurokawa Y et al. Environ Health Perspect. 1990;87:309–335.</span></div></td>
+</tr>
+
+<tr data-status="unsafe" data-text="925 926 chlorine chlorine dioxide flour bleaching treatment">
+  <td><div class="ins-code">925 / 926</div></td>
+  <td><div class="additive-name">Chlorine / Chlorine Dioxide</div><div class="additive-compound">Cl₂ / ClO₂ — Oxidizing/bleaching gases</div><div class="additive-use">Flour bleaching agent; white flour processing</div></td>
+  <td><span class="status-badge status-unsafe">✗ Unsafe</span></td>
+  <td><div class="side-effects"><strong>Banned in EU.</strong> Chlorine gas is toxic; destroys <strong>vitamin E</strong> and nutrients in flour; produces <strong>organochlorine compounds</strong> (potential carcinogens/endocrine disruptors); respiratory hazard during production. Chlorine dioxide: less toxic but destroys nutrients and creates chlorite residues — potentially harmful at dietary exposure.</div></td>
+  <td><div class="refs"><span>EU — Directive 95/2/EC — Not permitted for flour treatment</span><span>Kasarda DD et al. Cereal Chem. 1978;55:430–439.</span></div></td>
+</tr>
+
+<tr data-status="unsafe" data-text="927a azodicarbonamide flour treatment bread dough conditioner banned">
+  <td><div class="ins-code">927a</div></td>
+  <td><div class="additive-name">Azodicarbonamide (ADA)</div><div class="additive-compound">C₂H₄N₄O₂ — Synthetic azo compound</div><div class="additive-use">Flour treatment, dough conditioner, bread; also used in rubber/plastics manufacturing</div></td>
+  <td><span class="status-badge status-unsafe">✗ Unsafe</span></td>
+  <td><div class="side-effects"><strong>Banned in EU, Australia, UK</strong> and many countries. Breaks down into <strong>semicarbazide (SEM)</strong> — a urinary bladder carcinogen in animals (IARC); and <strong>urethane (ethyl carbamate)</strong> — Group 2A carcinogen (IARC). Occupational exposure causes <strong>asthma, respiratory sensitization</strong>; WHO flagged concerns 1999. The "yoga mat chemical" — gained media attention 2014 after Subway controversy.</div></td>
+  <td><div class="refs"><span>IARC — Semicarbazide (SEM): potential carcinogen concern; urethane Group 2A Vol. 96 (2010)</span><span>WHO Food Additives Series 39 — Azodicarbonamide (1998)</span><span>Hoenicke K et al. Eur Food Res Technol. 2004;219(2):151–155.</span></div></td>
+</tr>
+
+<tr data-status="safe" data-text="928 benzoyl peroxide flour bleaching preservative">
+  <td><div class="ins-code">928</div></td>
+  <td><div class="additive-name">Benzoyl Peroxide</div><div class="additive-compound">(C₆H₅CO)₂O₂ — Organic peroxide oxidizing agent</div><div class="additive-use">Flour bleaching; white flour, wheat starch</div></td>
+  <td><span class="status-badge status-caution">⚠ Caution</span></td>
+  <td><div class="side-effects"><strong>Banned in EU.</strong> Destroys <strong>carotenoids and vitamin E</strong> in flour; concern about free radical production; reactive oxygen species generation. Not permitted in organic production. Considered unnecessary when alternatives exist.</div></td>
+  <td><div class="refs"><span>EU — Not permitted as food additive</span><span>JECFA — ADI "not specified" (residues in flour minimal after baking)</span></div></td>
+</tr>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- CATEGORY: SWEETENERS (950–968) -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<tr class="cat-row"><td colspan="5"><div class="cat-row-label">Artificial Sweeteners — INS 950 to 968</div></td></tr>
+
+<tr data-status="caution" data-text="950 acesulfame k potassium sweetener calorie free">
+  <td><div class="ins-code">950</div></td>
+  <td><div class="additive-name">Acesulfame Potassium (Acesulfame-K / Ace-K)</div><div class="additive-compound">C₄H₄KNO₄S — Synthetic sulfamate sweetener (200× sweeter than sugar)</div><div class="additive-use">Sweetener; diet beverages, confectionery, dairy, baked goods, pharmaceuticals</div></td>
+  <td><span class="status-badge status-caution">⚠ Caution</span></td>
+  <td><div class="side-effects">Animal studies: methylene chloride (used in manufacturing) linked to <strong>liver and lung tumours</strong>; <strong>gut microbiome disruption</strong> (reduces beneficial bacteria); <strong>potential glucose metabolism disruption</strong>; some evidence of <strong>insulin response stimulation</strong> despite being non-caloric; possible neurotoxic effects in animal models. More human data needed.</div></td>
+  <td><div class="refs"><span>Swithers SE. Trends Endocrinol Metab. 2013;24(9):431–441.</span><span>Bian X et al. Mol Nutr Food Res. 2017;61(1):1600218. [Microbiome]</span><span>EFSA ANS Panel. EFSA Journal. 2009;7(8):1220.</span></div></td>
+</tr>
+
+<tr data-status="caution" data-text="951 aspartame sweetener phenylalanine artificial">
+  <td><div class="ins-code">951</div></td>
+  <td><div class="additive-name">Aspartame</div><div class="additive-compound">C₁₄H₁₈N₂O₅ — Dipeptide methyl ester (L-aspartyl-L-phenylalanine methyl ester); 200× sweeter than sugar</div><div class="additive-use">Sweetener; diet sodas, chewing gum, yogurt, tabletop sweeteners, medicines</div></td>
+  <td><span class="status-badge status-unsafe">✗ Unsafe</span></td>
+  <td><div class="side-effects"><strong>IARC classified as Group 2B — Possible human carcinogen (July 2023)</strong>; metabolized to <strong>phenylalanine</strong> — <strong>dangerous for PKU (phenylketonuria)</strong> patients (must be labelled); metabolizes to <strong>methanol → formaldehyde → formic acid</strong> — potential neurotoxicity at high doses; <strong>headaches, dizziness, mood changes</strong> reported; <strong>gut microbiome disruption</strong>; some evidence of lymphoma/leukaemia risk in animal studies (Soffritti Ramazzini Institute). JECFA maintains ADI but notes higher cancer risk is an open question post-IARC 2023.</div></td>
+  <td><div class="refs"><span>IARC — Aspartame: Group 2B Possible carcinogen. July 2023.</span><span>Soffritti M et al. Am J Ind Med. 2006;48(6):461–473. [Lymphoma risk]</span><span>Suez J et al. Nature. 2014;514(7521):181–186. [Microbiome]</span><span>JECFA — ADI 40 mg/kg bw/day (maintained 2023, pending more data)</span></div></td>
+</tr>
+
+<tr data-status="unsafe" data-text="952 cyclamate sodium calcium sweetener banned">
+  <td><div class="ins-code">952</div></td>
+  <td><div class="additive-name">Cyclamates (Cyclamic Acid / Na / Ca cyclamate)</div><div class="additive-compound">Sodium or calcium salt of cyclohexylsulfamic acid (30–50× sweeter than sugar)</div><div class="additive-use">Sweetener; limited use in some countries; combination products</div></td>
+  <td><span class="status-badge status-unsafe">✗ Unsafe</span></td>
+  <td><div class="side-effects"><strong>BANNED in USA since 1969</strong> — animal studies showed <strong>bladder cancer</strong>; metabolized to <strong>cyclohexylamine</strong> — testicular atrophy in animal studies; <strong>potential cardiovascular effects</strong>; some conversion by gut bacteria to carcinogenic metabolites. Ongoing safety debate — EFSA reviewed 2000, WHO JECFA maintains conditional ADI but not all countries accept it.</div></td>
+  <td><div class="refs"><span>Price JM et al. Science. 1970;167(3921):1131–1132. [Bladder cancer]</span><span>US FDA — Cyclamate ban maintained (petition denied 1989).</span><span>EFSA — Opinion 2000; ADI 7 mg/kg bw/day (EU allows)</span></div></td>
+</tr>
+
+<tr data-status="unsafe" data-text="954 saccharin sodium sweetener oldest artificial">
+  <td><div class="ins-code">954</div></td>
+  <td><div class="additive-name">Saccharin &amp; its Na, K, Ca Salts</div><div class="additive-compound">C₇H₅NO₃S — Sulfonamide (300× sweeter than sugar)</div><div class="additive-use">Sweetener; diet foods, beverages, tabletop sweeteners, medicines</div></td>
+  <td><span class="status-badge status-caution">⚠ Caution</span></td>
+  <td><div class="side-effects">Animal studies: <strong>bladder cancer in rats</strong> — mechanism differs from humans (rat-specific calcium phosphate crystallization); removed from US carcinogen list 2000. However: <strong>gut microbiome disruption</strong>; <strong>insulin resistance</strong> in human trials (Suez et al. 2022, Nature); <strong>weight gain paradox</strong>; possible cross-placental transfer. Currently considered conditionally safe but long-term effects still debated.</div></td>
+  <td><div class="refs"><span>Suez J et al. Nature. 2022;614:858–866. [Gut dysbiosis and insulin resistance]</span><span>NTP — Saccharin delisted from carcinogens (2000)</span><span>JECFA — ADI 0–5 mg/kg bw/day</span></div></td>
+</tr>
+
+<tr data-status="caution" data-text="955 sucralose splenda sweetener chlorinated sugar">
+  <td><div class="ins-code">955</div></td>
+  <td><div class="additive-name">Sucralose</div><div class="additive-compound">C₁₂H₁₉Cl₃O₈ — Chlorinated sucrose derivative (600× sweeter than sugar)</div><div class="additive-use">Sweetener; diet beverages, baked goods, dairy, sauces, pharmaceuticals</div></td>
+  <td><span class="status-badge status-caution">⚠ Caution</span></td>
+  <td><div class="side-effects"><strong>Gut microbiome disruption</strong> — reduces beneficial bacteria; <strong>glucose intolerance</strong> signals in some studies; <strong>leaky gut promotion</strong> — sucralose increases intestinal permeability; <strong>genotoxicity</strong> — 2023 study (Journal of Toxicology and Environmental Health) found sucralose-6-acetate (metabolite) is genotoxic and damages DNA; <strong>not fully inert</strong> — 15–30% is absorbed; may produce <strong>dioxin-like compounds</strong> when heated above 120°C (baking concern). EFSA re-evaluating.</div></td>
+  <td><div class="refs"><span>Schiffman SS, Rother KI. J Toxicol Environ Health B. 2013;16(7):399–451.</span><span>Farhat G et al. J Toxicol Environ Health. 2023;86(9):307–319. [Sucralose-6-acetate genotoxicity]</span><span>Suez J et al. Cell. 2022;185(18):3307–3328.e19. [Microbiome/glucose intolerance]</span></div></td>
+</tr>
+
+<tr data-status="safe" data-text="957 thaumatin sweetener protein natural miracle fruit">
+  <td><div class="ins-code">957</div></td>
+  <td><div class="additive-name">Thaumatin</div><div class="additive-compound">Protein from <em>Thaumatococcus daniellii</em> (2000× sweeter than sugar)</div><div class="additive-use">Sweetener, flavour enhancer; chewing gum, dairy, beverages</div></td>
+  <td><span class="status-badge status-safe">✓ Safe</span></td>
+  <td><div class="side-effects"><span class="safe-note">Natural protein; generally safe.</span> Digested like any other dietary protein. Rare: potential allergenicity (protein allergen risk). No confirmed adverse effects at food-use levels.</div></td>
+  <td><div class="refs"><span>JECFA — ADI "not specified"</span></div></td>
+</tr>
+
+<tr data-status="safe" data-text="960 steviol glycosides stevia natural sweetener">
+  <td><div class="ins-code">960</div></td>
+  <td><div class="additive-name">Steviol Glycosides (Stevia)</div><div class="additive-compound">Diterpene glycosides (rebaudioside A, stevioside) from <em>Stevia rebaudiana</em>; 200–350× sweeter than sugar</div><div class="additive-use">Sweetener; beverages, dairy, confectionery, tabletop sweetener</div></td>
+  <td><span class="status-badge status-safe">✓ Safe</span></td>
+  <td><div class="side-effects"><span class="safe-note">Generally safe; well-studied; may lower blood pressure and blood glucose (benefit for diabetics).</span> May interact with <strong>antihypertensive and antidiabetic medications</strong> (additive effect — monitor). Some report mild GI discomfort at high doses. No confirmed carcinogenicity or genotoxicity.</div></td>
+  <td><div class="refs"><span>JECFA — ADI 0–4 mg/kg bw/day (as steviol)</span><span>Goyal SK et al. Int J Food Sci Nutr. 2010;61(1):1–10.</span></div></td>
+</tr>
+
+<tr data-status="safe" data-text="961 neotame sweetener intense aspartame derivative">
+  <td><div class="ins-code">961</div></td>
+  <td><div class="additive-name">Neotame</div><div class="additive-compound">C₂₀H₃₀N₂O₅ — N-substituted aspartame derivative (7000–13000× sweeter than sugar)</div><div class="additive-use">Sweetener; baked goods, beverages, dairy products</div></td>
+  <td><span class="status-badge status-safe">✓ Safe</span></td>
+  <td><div class="side-effects"><span class="safe-note">Considered safe; unlike aspartame, not phenylalanine source of concern (different metabolism).</span> Limited long-term human data. Some animal studies show gut microbiome effects. Emerging research needed.</div></td>
+  <td><div class="refs"><span>JECFA — ADI 0–2 mg/kg bw/day</span><span>EFSA ANS Panel. EFSA Journal. 2007;5(11):581.</span></div></td>
+</tr>
+
+<tr data-status="safe" data-text="962 aspartame acesulfame salt sweetener">
+  <td><div class="ins-code">962</div></td>
+  <td><div class="additive-name">Aspartame-Acesulfame Salt</div><div class="additive-compound">Combination compound of aspartame and acesulfame (350× sweeter than sugar)</div><div class="additive-use">Sweetener; chewing gum, tabletop sweeteners</div></td>
+  <td><span class="status-badge status-caution">⚠ Caution</span></td>
+  <td><div class="side-effects">Combines concerns of both <strong>INS 950 (Ace-K)</strong> and <strong>INS 951 (aspartame)</strong>. Phenylalanine source — <strong>dangerous for PKU</strong>. IARC 2B concern from aspartame component.</div></td>
+  <td><div class="refs"><span>See INS 950 and 951 references above.</span><span>JECFA — ADI derived from component ADIs</span></div></td>
+</tr>
+
+<tr data-status="safe" data-text="965 maltitol polyol sweetener sugar alcohol">
+  <td><div class="ins-code">965(i/ii)</div></td>
+  <td><div class="additive-name">Maltitol / Maltitol Syrup</div><div class="additive-compound">C₁₂H₂₄O₁₁ — Sugar alcohol from maltose (75% sweetness of sugar)</div><div class="additive-use">Bulk sweetener; sugar-free confectionery, chocolate, chewing gum</div></td>
+  <td><span class="status-badge status-caution">⚠ Caution</span></td>
+  <td><div class="side-effects"><strong>Laxative effect</strong> above 40 g/day; <strong>osmotic diarrhoea</strong>; bloating, gas; FODMAP — problematic for IBS patients. Note: maltitol has higher glycaemic index among polyols — less ideal for strict diabetics compared to others. Mandated laxative warning label in EU.</div></td>
+  <td><div class="refs"><span>JECFA — ADI "not specified" (laxative threshold noted)</span><span>Nofre C et al. Food Chem. 2000;70(4):387–394.</span></div></td>
+</tr>
+
+<tr data-status="safe" data-text="966 lactitol polyol sweetener sugar alcohol">
+  <td><div class="ins-code">966</div></td>
+  <td><div class="additive-name">Lactitol</div><div class="additive-compound">C₁₂H₂₄O₁₁ — Sugar alcohol from lactose (40% sweetness of sugar)</div><div class="additive-use">Bulk sweetener; sugar-free biscuits, chocolate, confectionery; medical laxative</div></td>
+  <td><span class="status-badge status-caution">⚠ Caution</span></td>
+  <td><div class="side-effects"><strong>Osmotic laxative effect</strong> — used medically for this purpose at high doses; <strong>bloating, flatulence</strong>; not for lactose-intolerant individuals (contains lactose-derived structure — though generally better tolerated than lactose). EU mandates laxative warning.</div></td>
+  <td><div class="refs"><span>JECFA — ADI "not specified"</span></div></td>
+</tr>
+
+<tr data-status="safe" data-text="967 xylitol polyol sweetener sugar alcohol dental">
+  <td><div class="ins-code">967</div></td>
+  <td><div class="additive-name">Xylitol</div><div class="additive-compound">C₅H₁₂O₅ — 5-carbon sugar alcohol (similar sweetness to sugar)</div><div class="additive-use">Sweetener, humectant; sugar-free chewing gum, dental products, confectionery, pharmaceuticals</div></td>
+  <td><span class="status-badge status-caution">⚠ Caution</span></td>
+  <td><div class="side-effects"><strong>Laxative/diarrhoea</strong> above 40–50 g/day; bloating, gas; FODMAP. Important: <strong>HIGHLY TOXIC TO DOGS</strong> — must warn pet owners. <strong>Benefits</strong>: reduces dental caries (well-established); low glycaemic index. A 2024 Cleveland Clinic study linked plasma xylitol to <strong>cardiovascular events</strong> — significant emerging concern requiring follow-up research.</div></td>
+  <td><div class="refs"><span>Witkowski M et al. Eur Heart J. 2024;45(27):2439–2452. [Xylitol and CVD]</span><span>JECFA — ADI "not specified"</span><span>Nayak PA et al. Clin Cosmet Investig Dent. 2014;6:89–94. [Dental benefits]</span></div></td>
+</tr>
+
+<tr data-status="safe" data-text="968 erythritol polyol sweetener zero calorie">
+  <td><div class="ins-code">968</div></td>
+  <td><div class="additive-name">Erythritol</div><div class="additive-compound">C₄H₁₀O₄ — 4-carbon sugar alcohol (70% sweetness of sugar, ~0 kcal)</div><div class="additive-use">Sweetener, humectant; low-calorie foods, beverages, baked goods, confectionery</div></td>
+  <td><span class="status-badge status-caution">⚠ Caution</span></td>
+  <td><div class="side-effects"><strong>2023 Nature Medicine study</strong> (Hazen lab, Cleveland Clinic): elevated plasma erythritol strongly associated with <strong>major adverse cardiovascular events (MACE)</strong> — heart attack, stroke, death; <strong>platelet clot formation</strong> enhancement. This is a major emerging safety concern being debated internationally. Also: laxative effect at high doses (>30 g); bloating. Previously considered one of the safest polyols.</div></td>
+  <td><div class="refs"><span>Witkowski M et al. Nat Med. 2023;29(3):730–738. [CVD risk — landmark study]</span><span>JECFA — ADI "not specified" (pre-2023 evaluation)</span><span>Note: Safety status under active scientific re-evaluation post-2023.</span></div></td>
+</tr>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- CATEGORY: ENZYMES (1100–1105) -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<tr class="cat-row"><td colspan="5"><div class="cat-row-label">Enzyme Additives — INS 1100 to 1105</div></td></tr>
+
+<tr data-status="safe" data-text="1100 1101 1102 1103 1104 1105 amylase papain bromelain lysozyme enzyme flour treatment">
+  <td><div class="ins-code">1100–1105</div></td>
+  <td><div class="additive-name">Enzymes: Amylases (i) / Papain (ii) / Bromelain (iii) / Ficin (iv) / Glucose Oxidase (1102) / Invertase (1103) / Lipase (1104) / Lysozyme (1105)</div><div class="additive-compound">Proteins (biological catalysts) from microbial / plant / animal sources</div><div class="additive-use">Flour treatment, tenderizers, stabilizers, preservatives; bread, meat, dairy, beer</div></td>
+  <td><span class="status-badge status-safe">✓ Safe</span></td>
+  <td><div class="side-effects"><span class="safe-note">Biological proteins; generally safe as denatured in cooking/processing.</span> Papain/bromelain: rare <strong>allergic reactions</strong> (latex-fruit syndrome cross-reactivity); lysozyme (1105): egg-white source — <strong>contraindicated in egg allergy</strong>. Enzyme residues in final food are typically minimal. Occupational sensitization risk in bakery workers (amylase).</div></td>
+  <td><div class="refs"><span>JECFA — ADI "not specified" (most enzymes)</span><span>Baur X et al. Int Arch Allergy Immunol. 1994;105(1):44–48. [Amylase and baker's asthma]</span></div></td>
+</tr>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- CATEGORY: BULKING AGENTS (1200-1202) -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<tr class="cat-row"><td colspan="5"><div class="cat-row-label">Bulking Agents &amp; Miscellaneous — INS 1200 to 1521</div></td></tr>
+
+<tr data-status="safe" data-text="1200 polydextrose bulking agent fibre low calorie">
+  <td><div class="ins-code">1200</div></td>
+  <td><div class="additive-name">Polydextroses A and N</div><div class="additive-compound">Randomly-bonded glucose polymer with sorbitol and citric acid residues</div><div class="additive-use">Bulking agent, dietary fibre; low-calorie foods, confectionery, baked goods</div></td>
+  <td><span class="status-badge status-safe">✓ Safe</span></td>
+  <td><div class="side-effects"><span class="safe-note">Generally safe; acts as prebiotic.</span> High doses: osmotic diarrhoea, bloating. Benefits: increases dietary fibre, reduces calorie density.</div></td>
+  <td><div class="refs"><span>JECFA — ADI "not specified"</span></div></td>
+</tr>
+
+<tr data-status="safe" data-text="1201 polyvinylpyrrolidone pvp stabilizer clarifying">
+  <td><div class="ins-code">1201</div></td>
+  <td><div class="additive-name">Polyvinylpyrrolidone (PVP)</div><div class="additive-compound">Synthetic polymer from N-vinylpyrrolidinone</div><div class="additive-use">Stabilizer, clarifying agent; wine, beer, pharmaceutical binder</div></td>
+  <td><span class="status-badge status-safe">✓ Safe</span></td>
+  <td><div class="side-effects"><span class="safe-note">Not absorbed; passes through GI tract inertly.</span> No confirmed adverse effects. Used as pharmaceutical excipient with established safety record.</div></td>
+  <td><div class="refs"><span>JECFA — ADI "not specified"</span></div></td>
+</tr>
+
+<tr data-status="safe" data-text="1202 polyvinylpolypyrrolidone pvpp colour stabilizer beer wine">
+  <td><div class="ins-code">1202</div></td>
+  <td><div class="additive-name">Polyvinylpolypyrrolidone (PVPP)</div><div class="additive-compound">Cross-linked insoluble PVP polymer</div><div class="additive-use">Colour stabilizer; wine, beer, fruit juice clarification</div></td>
+  <td><span class="status-badge status-safe">✓ Safe</span></td>
+  <td><div class="side-effects"><span class="safe-note">Insoluble and not absorbed; removed in filtration processes.</span> No safety concerns in end products. Safe.</div></td>
+  <td><div class="refs"><span>JECFA — ADI "not specified"</span></div></td>
+</tr>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- CATEGORY: MODIFIED STARCHES (1400-1452) -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<tr class="cat-row"><td colspan="5"><div class="cat-row-label">Modified Starches — INS 1400 to 1452</div></td></tr>
+
+<tr data-status="safe" data-text="1400 1401 1402 1403 1404 1405 modified starch dextrin acid alkaline bleached oxidized enzyme treated">
+  <td><div class="ins-code">1400–1405</div></td>
+  <td><div class="additive-name">Dextrin / Acid-Treated / Alkaline-Treated / Bleached / Oxidized / Enzyme-Treated Starch</div><div class="additive-compound">Physically or chemically modified native starches (corn, wheat, potato, tapioca)</div><div class="additive-use">Thickener, stabilizer, bulking agent; sauces, soups, puddings, confectionery</div></td>
+  <td><span class="status-badge status-safe">✓ Safe</span></td>
+  <td><div class="side-effects"><span class="safe-note">Generally safe; ADI "not specified" by JECFA and EFSA for all.</span> Digested similarly to native starch. Some individuals with starch sensitivities may experience GI discomfort. No genotoxicity or carcinogenicity concerns.</div></td>
+  <td><div class="refs"><span>EFSA ANS Panel — Modified starches 2017. EFSA Journal. 2017;15(10):4911.</span><span>JECFA — "Not specified" ADI for 16 modified starches (1982, 2001)</span></div></td>
+</tr>
+
+<tr data-status="safe" data-text="1410 1412 1413 1414 monostarch distarch phosphate phosphated acetylated modified starch">
+  <td><div class="ins-code">1410 / 1412 / 1413 / 1414</div></td>
+  <td><div class="additive-name">Monostarch Phosphate / Distarch Phosphate / Phosphated Distarch Phosphate / Acetylated Distarch Phosphate</div><div class="additive-compound">Starch esterified with phosphoric acid (crosslinked)</div><div class="additive-use">Thickener, stabilizer; salad dressings, frozen foods, baby foods, sauces</div></td>
+  <td><span class="status-badge status-safe">✓ Safe</span></td>
+  <td><div class="side-effects"><span class="safe-note">Safe; not absorbed intact; hydrolyzed by intestinal enzymes.</span> Very high intake: contributes minimally to phosphate load (see INS 338–341 concerns). No confirmed toxicity. EFSA confirmed no safety concern in 2017.</div></td>
+  <td><div class="refs"><span>EFSA ANS Panel — Modified starches re-evaluation. EFSA Journal. 2017;15(10):4911.</span><span>JECFA — ADI "not specified"</span></div></td>
+</tr>
+
+<tr data-status="safe" data-text="1420 1422 1440 1442 1450 1451 starch acetate acetylated adipate hydroxypropyl octenylsuccinate oxidized modified starch">
+  <td><div class="ins-code">1420 / 1422 / 1440 / 1442 / 1450 / 1451</div></td>
+  <td><div class="additive-name">Starch Acetate / Acetylated Distarch Adipate / Hydroxypropyl Starch / Hydroxypropyl Distarch Phosphate / Starch Sodium Octenylsuccinate / Acetylated Oxidized Starch</div><div class="additive-compound">Starch modified by esterification/etherification</div><div class="additive-use">Thickener, emulsifier, stabilizer; frozen foods, canned goods, dairy, sauces, baked goods</div></td>
+  <td><span class="status-badge status-safe">✓ Safe</span></td>
+  <td><div class="side-effects"><span class="safe-note">All confirmed safe by EFSA (2017) and JECFA (ADI "not specified").</span> Digested similarly to native starch. No observed adverse effects even at very high doses (up to 31,000 mg/kg bw/day in rodents). No genotoxicity concerns.</div></td>
+  <td><div class="refs"><span>EFSA ANS Panel. EFSA Journal. 2017;15(10):4911. — All 12 modified starches: no safety concern</span><span>JECFA — ADI "not specified" for all</span></div></td>
+</tr>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- CATEGORY: MISCELLANEOUS (1503, 1505, 1518, 1520, 1521) -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<tr class="cat-row"><td colspan="5"><div class="cat-row-label">Miscellaneous Additives — INS 1503–1521</div></td></tr>
+
+<tr data-status="safe" data-text="1503 castor oil release agent">
+  <td><div class="ins-code">1503</div></td>
+  <td><div class="additive-name">Castor Oil</div><div class="additive-compound">Triglyceride rich in ricinoleic acid from <em>Ricinus communis</em></div><div class="additive-use">Release agent, glazing; confectionery, pharmaceutical coatings</div></td>
+  <td><span class="status-badge status-caution">⚠ Caution</span></td>
+  <td><div class="side-effects">In large amounts: <strong>strong laxative effect</strong>; GI cramps; uterine contractions (contraindicated in pregnancy at high doses); cathartic. At trace food-additive levels, no significant adverse effects. Contains no ricin (the toxic lectin is in seed protein — oil processing removes it).</div></td>
+  <td><div class="refs"><span>JECFA — ADI 0–0.7 mg/kg bw/day</span></div></td>
+</tr>
+
+<tr data-status="safe" data-text="1505 triethyl citrate foam stabilizer carrier">
+  <td><div class="ins-code">1505</div></td>
+  <td><div class="additive-name">Triethyl Citrate</div><div class="additive-compound">Ethyl ester of citric acid</div><div class="additive-use">Foam stabilizer, plasticizer; egg white, food packaging (biodegradable)</div></td>
+  <td><span class="status-badge status-safe">✓ Safe</span></td>
+  <td><div class="side-effects"><span class="safe-note">Hydrolyzed to ethanol and citric acid; safe.</span> No confirmed adverse effects at food use levels.</div></td>
+  <td><div class="refs"><span>JECFA — ADI "not specified"</span></div></td>
+</tr>
+
+<tr data-status="safe" data-text="1518 triacetin humectant solvent">
+  <td><div class="ins-code">1518</div></td>
+  <td><div class="additive-name">Triacetin (Glycerol Triacetate)</div><div class="additive-compound">C₉H₁₄O₆ — Triester of glycerol and acetic acid</div><div class="additive-use">Humectant, carrier solvent, plasticizer; confectionery, chewing gum</div></td>
+  <td><span class="status-badge status-safe">✓ Safe</span></td>
+  <td><div class="side-effects"><span class="safe-note">Safe at food use levels; hydrolyzed to glycerol and acetic acid.</span> No confirmed adverse effects.</div></td>
+  <td><div class="refs"><span>JECFA — ADI "not specified"</span></div></td>
+</tr>
+
+<tr data-status="caution" data-text="1520 propylene glycol humectant solvent dispersing">
+  <td><div class="ins-code">1520</div></td>
+  <td><div class="additive-name">Propylene Glycol</div><div class="additive-compound">C₃H₈O₂ — 1,2-propanediol (diol solvent)</div><div class="additive-use">Humectant, solvent, carrier; flavour extracts, colouring, confectionery, pharmaceuticals</div></td>
+  <td><span class="status-badge status-caution">⚠ Caution</span></td>
+  <td><div class="side-effects">Generally considered safe at food-use levels. <strong>Banned from infant food in EU</strong>; <strong>neurotoxic at high doses</strong> in animals; <strong>lactic acidosis</strong> in neonates and renally impaired patients; <strong>contact dermatitis</strong> in some individuals; <strong>CNS depression</strong> at very high oral doses; metabolic effects in high doses (converted to lactic and pyruvic acid). Not suitable for cats/dogs (toxic to pets).</div></td>
+  <td><div class="refs"><span>EFSA ANS Panel. EFSA Journal. 2018;16(7):5235.</span><span>Zar T et al. Semin Dial. 2007;20(5):430–435. [Toxicity in renal failure]</span><span>JECFA — ADI 0–25 mg/kg bw/day</span></div></td>
+</tr>
+
+<tr data-status="safe" data-text="1521 polyethylene glycol peg antifoaming">
+  <td><div class="ins-code">1521</div></td>
+  <td><div class="additive-name">Polyethylene Glycol (PEG)</div><div class="additive-compound">HO–(CH₂CH₂O)n–H — Synthetic polymer</div><div class="additive-use">Antifoaming agent; packaging, pharmaceutical excipient, tablet coating</div></td>
+  <td><span class="status-badge status-safe">✓ Safe</span></td>
+  <td><div class="side-effects"><span class="safe-note">Generally safe; not absorbed; passes through GI tract.</span> High medicinal doses: osmotic laxative effect (used therapeutically). Rare: allergic reactions (PEG allergy, recently recognized — relevant for COVID mRNA vaccine recipients who reported PEG allergies). At food-contact trace levels, no significant risk.</div></td>
+  <td><div class="refs"><span>JECFA — ADI 0–10 mg/kg bw/day</span><span>Stone CA et al. J Allergy Clin Immunol Pract. 2019;7(6):1751–1761. [PEG allergy]</span></div></td>
+</tr>
+
+</tbody>
+</table>
+</div>
+
+<div class="footer">
+  <div class="footer-title">Methodology &amp; Disclaimer</div>
+  <p><strong>Sources:</strong> FSSAI (Food Safety and Standards Authority of India) Regulations 2011 &amp; 2022 Compendium; FAO/WHO Codex Alimentarius CXG 36-1989 (INS); JECFA (Joint FAO/WHO Expert Committee on Food Additives); EFSA (European Food Safety Authority) Scientific Opinions; IARC Monographs on Carcinogenicity; US FDA regulatory documents; peer-reviewed literature (PubMed/NCBI, Nature, Lancet, NEJM, Journal of Toxicology and Environmental Health).</p>
+  <p><strong>Safety Classification Methodology:</strong> SAFE = no documented harmful effects at realistic dietary exposures (JECFA/EFSA/FDA GRAS or equivalent); CAUTION = conflicting evidence, specific populations at risk, or evolving safety data; UNSAFE = confirmed adverse human health effects at dietary levels, IARC classification Group 1/2A/2B with credible food-route mechanism, or regulatory ban in multiple major jurisdictions (EU, USA, or WHO recommendation against use).</p>
+  <p><strong>Important Note:</strong> This reference covers INS codes used or applicable in India under FSSAI regulations and the Codex Alimentarius INS system. Not all codes in the global INS list are approved for use in India. Regulatory status and safety assessments are subject to change as new research emerges. This document is for educational/consumer information purposes and does not constitute medical advice. For the most current FSSAI-approved list, consult the official FSSAI Compendium of Food Additives Regulations (latest edition).</p>
+  <p><strong>Last compiled:</strong> March 2026 | Based on FSSAI 2022 Compendium, Codex CXG 36-2015, and literature through 2024.</p>
+</div>
+
+<script>
+let currentFilter = 'all';
+
+function setFilter(filter) {
+  currentFilter = filter;
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.className = 'filter-btn';
+  });
+  const btn = document.getElementById('btn-' + filter);
+  if (filter === 'all') btn.classList.add('active-all');
+  else if (filter === 'safe') btn.classList.add('active-safe');
+  else if (filter === 'unsafe') btn.classList.add('active-unsafe');
+  else if (filter === 'caution') btn.classList.add('active-caution');
+  filterTable();
+}
+
+function filterTable() {
+  const query = document.getElementById('searchInput').value.toLowerCase();
+  const rows = document.querySelectorAll('#tableBody tr[data-status]');
+  let visible = 0;
+  rows.forEach(row => {
+    const status = row.getAttribute('data-status');
+    const text = row.getAttribute('data-text') || '';
+    const rowText = row.textContent.toLowerCase();
+    const matchesFilter = currentFilter === 'all' || status === currentFilter;
+    const matchesSearch = !query || text.includes(query) || rowText.includes(query);
+    if (matchesFilter && matchesSearch) {
+      row.classList.remove('hidden');
+      visible++;
+    } else {
+      row.classList.add('hidden');
+    }
+  });
+  document.getElementById('rowCount').textContent = visible + ' additives shown';
+}
+
+// Initial count
+window.onload = function() {
+  filterTable();
+};
+</script>
+</body>
+</html>
