@@ -27,7 +27,10 @@ That's it — everything (styles, data, logic) is bundled in the single file.
 
 ## Owner
 
-**Aman** — repository owner and maintainer.
+**Aman**
+
+#Maintainer
+**ME as he needed the help in deploying to learn 
 
 ## License
 
